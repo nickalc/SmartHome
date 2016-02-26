@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windows_bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.nick.smarthome.widgets.CustomerScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@color/main_toolbar_color"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/space_15">
+
+                <com.nick.smarthome.widgets.CircleImageView
+                    android:id="@+id/iv_avatar"
+                    style="@style/UserFaceImageStyle"
+                    app:border_color="@color/white"
+                    app:border_width="2dip" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:textColor="@color/white"
+                    android:text="yyy"
+                    android:textSize="@dimen/text_size_16" />
+            </LinearLayout>
+
+            <View style="@style/h_line" />
+
+            <include layout="@layout/fragment_user_center_information" />
+
+            <Button
+                android:id="@+id/btn_update_userinfo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btn_red"
+                android:padding="10dp"
+                android:text="修改个人信息"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </com.nick.smarthome.widgets.CustomerScrollView>
+
+    <!--<net.oschina.app.ui.empty.EmptyLayout-->
+    <!--android:id="@+id/error_layout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:visibility="visible" />-->
+
+</LinearLayout>

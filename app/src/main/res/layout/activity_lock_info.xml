@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windows_gray_bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.nick.smarthome.widgets.MyScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/windows_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/windows_bg"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/ll_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_5"
+                android:layout_marginRight="@dimen/space_5"
+                android:layout_marginTop="@dimen/space_5"
+                android:background="@color/windows_gray_bg">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_add_lock_pic"
+                style="@style/option_item_rl">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/upload_pic"
+                    android:textColor="@color/text_dark"
+                    android:textSize="@dimen/text_size_16" />
+            </LinearLayout>
+
+            <View style="@style/h_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_notification_settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/space_10">
+
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:text="锁类型"
+                    android:textColor="@color/text_dark"
+                    android:textSize="@dimen/text_size_16" />
+
+                <!--<com.nick.smarthome.widgets.togglebutton.ToggleButton-->
+                    <!--android:id="@+id/tb_notification"-->
+                    <!--style="@style/option_item_toggleButton"-->
+                    <!--android:layout_alignParentRight="true" />-->
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/windows_bg"
+                    android:layout_alignParentRight="true"
+                   >
+
+                    <RadioGroup
+                        android:id="@+id/lock_type_radioGroup"
+                        android:layout_width="100dp"
+                        android:layout_height="25.0dip"
+                        android:background="@drawable/tab_bg"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/house_tag"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/radio_locktype_left_selector"
+                            android:button="@null"
+                            android:checked="true"
+                            android:gravity="center"
+                            android:text="客厅"
+                            android:textColor="@color/white"
+                            android:textSize="14.0sp" />
+
+                        <RadioButton
+                            android:id="@+id/room_tag"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1.0"
+                            android:background="@drawable/radio_locktype_right_selector"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="房间"
+                            android:textColor="@color/white"
+                            android:textSize="14.0sp" />
+                    </RadioGroup>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <View style="@style/h_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_room_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/space_10">
+
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:text="房间号"
+                    android:textColor="@color/text_dark"
+                    android:textSize="@dimen/text_size_16" />
+
+
+                <com.nick.smarthome.widgets.wheelpicker.widget.curved.WheelMonthPicker
+                    android:id="@+id/main_wheel_room"
+                    android:layout_width="100dp"
+                    android:visibility="visible"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/light_transparent"
+                    app:wheel_text_color="@color/white"
+                    app:wheel_text_color_current="@color/main_toolbar_color" />
+
+                <TextView
+                    android:id="@+id/room_no"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_gray"
+                    android:padding="@dimen/space_2"
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:layout_alignParentRight="true"
+                    android:text="2"
+                    android:textColor="@color/main_toolbar_color"/>
+
+            </RelativeLayout>
+
+            <View style="@style/h_line" />
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="300dp"-->
+            <!--android:orientation="vertical"-->
+            <!--android:visibility="visible">-->
+
+            <RelativeLayout
+                android:id="@+id/status_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/windows_bg"
+                android:paddingBottom="5.0dip"
+                android:paddingTop="5.0dip">
+
+                <RadioGroup
+                    android:id="@+id/status_radioGroup"
+                    android:layout_width="fill_parent"
+                    android:layout_height="35.0dip"
+                    android:layout_marginBottom="3dip"
+                    android:layout_marginLeft="60dip"
+                    android:layout_marginRight="60dip"
+                    android:background="@drawable/tab_bg"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/private_tag"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_recomm_selector"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="私用"
+                        android:textColor="@color/wp_text_selector"
+                        android:textSize="14.0sp" />
+
+                    <RadioButton
+                        android:id="@+id/public_tag"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:background="@drawable/radio_topic_selector"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="公用"
+                        android:textColor="@color/wp_text_selector"
+                        android:textSize="14.0sp" />
+                </RadioGroup>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_set_Business_date"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_35"
+                android:background="@drawable/list_item_background"
+                android:clickable="true"
+                android:gravity="center_vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/space_15"
+                    android:gravity="left"
+                    android:text="设置不营业日期"
+                    android:textColor="@color/text_dark"
+                    android:textSize="@dimen/text_size_16" />
+
+                <ImageView
+                    android:id="@+id/img_date_arrow"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/space_10"
+                    android:src="@drawable/icon_down_arrow" />
+            </RelativeLayout>
+
+            <include layout="@layout/layout_set_business_date" />
+
+            <View style="@style/h_line" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl_set_time_price"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_35"
+                android:background="@drawable/list_item_background"
+                android:clickable="true"
+                android:gravity="center_vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/space_15"
+                    android:gravity="left"
+                    android:text="设置时段价格"
+                    android:textColor="@color/text_dark"
+                    android:textSize="@dimen/text_size_16" />
+
+                <ImageView
+                    android:id="@+id/img_time_arrow"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/space_10"
+                    android:src="@drawable/icon_down_arrow" />
+
+                <ImageView
+                    android:id="@+id/add_time_price_btn"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/space_20"
+                    android:src="@drawable/icon_update" />
+            </RelativeLayout>
+
+            <include layout="@layout/layout_set_time_price" />
+
+            <!--<android.support.v4.view.ViewPager-->
+            <!--android:id="@+id/viewpager"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="fill_parent"-->
+            <!--android:layout_below="@+id/status_layout" />-->
+
+            <!--</LinearLayout>-->
+
+
+            <View
+                style="@style/h_line"
+                android:layout_height="@dimen/space_10" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/space_20"
+                android:background="@color/windows_bg"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/btn_save"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="@dimen/space_30"
+                    android:background="@color/main_toolbar_color"
+                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/space_60"
+                    android:layout_marginRight="@dimen/space_60"
+                    android:text="保存修改"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_18" />
+
+                <TextView
+                    android:id="@+id/btn_delete"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/space_20"
+                    android:background="@color/light_gray"
+                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/space_60"
+                    android:layout_marginRight="@dimen/space_60"
+                    android:text="删  除"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_18" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.nick.smarthome.widgets.MyScrollView>
+
+</LinearLayout>

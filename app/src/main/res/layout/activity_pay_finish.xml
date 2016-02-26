@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windows_bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_10">
+
+
+        <LinearLayout
+            android:id="@+id/rl_house_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_5"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_house_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_5"
+                android:ellipsize="end"
+                android:text=""
+                android:textColor="@color/text_dark"
+                android:textSize="@dimen/text_size_18" />
+
+            <TextView
+                android:id="@+id/tv_room_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_10"
+                android:ellipsize="end"
+                android:visibility="visible"
+                android:text="房间"
+                android:textColor="@color/text_dark"
+                android:textSize="@dimen/text_size_14" />
+
+            <TextView
+                android:id="@+id/tv_room_no"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/icon_circle_light_redlight_red"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_12" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rl_order_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_house_name"
+            android:layout_margin="@dimen/space_5"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_house_addr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_5"
+                android:ellipsize="end"
+                android:text=""
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_size_14" />
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/rl_order_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_order_time"
+            android:layout_margin="@dimen/space_5"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/order_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_5"
+                android:ellipsize="end"
+                android:text="订单号:"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/text_size_14" />
+
+            <TextView
+                android:id="@+id/tv_order_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_10"
+                android:ellipsize="end"
+                android:text=""
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_size_14" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_order_code"
+            android:layout_margin="@dimen/space_10"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/order_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:text="已支付:"
+                android:textColor="@color/text_dark"
+                android:textSize="@dimen/text_size_18" />
+
+            <TextView
+                android:id="@+id/tv_order_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_10"
+                android:ellipsize="end"
+                android:text=""
+                android:textColor="@color/text_dark"
+                android:textSize="@dimen/text_size_18" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_40"
+        android:layout_marginRight="@dimen/space_10"
+        android:layout_marginLeft="@dimen/space_10"
+        android:background="@color/light_gray"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_40"
+            android:layout_marginTop="@dimen/space_10"
+            android:gravity="center"
+            android:text="需注意"
+            android:textColor="@color/text_dark"
+            android:textSize="@dimen/text_size_18" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/space_30"
+                android:layout_height="@dimen/space_30"
+                android:layout_marginLeft="@dimen/space_20"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_circle_green" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:lineSpacingExtra="@dimen/space_8"
+                android:padding="@dimen/space_10"
+                android:text="请短按锁上按钮以唤醒锁"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_size_16" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/space_10"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/space_30"
+                android:layout_height="@dimen/space_30"
+                android:layout_marginLeft="@dimen/space_20"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_circle_green" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:lineSpacingExtra="@dimen/space_8"
+                android:padding="@dimen/space_10"
+                android:text="在锁没打开之前请将二维码放置于摄像头前不动"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_size_16" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

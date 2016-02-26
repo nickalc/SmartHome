@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/list_item_background">
+
+
+    <LinearLayout
+        android:id="@+id/rootview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_40"
+            android:background="@color/low_gray"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/space_35"
+                android:layout_weight="5"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30.0dip"
+                android:layout_marginRight="0.0dip"
+                android:background="@drawable/search_input_bg"
+                android:paddingLeft="8.5dip"
+                android:paddingRight="8.5dip">
+
+
+
+
+                <AutoCompleteTextView
+                    android:id="@+id/keyWord"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    style="@style/AutoCompleteStyle"
+                    android:layout_marginLeft="5.0dip"
+                    android:paddingLeft="@dimen/space_25"
+                    android:background="@color/white"
+                    android:completionThreshold="1"
+                    android:dropDownVerticalOffset="1.0dip"
+                    android:gravity="center_vertical"
+                    android:hint="请输入关键字"
+                    android:imeOptions="actionDone"
+                    android:inputType="text|textAutoComplete"
+                    android:maxLength="20"
+                    android:paddingRight="10.0dip"
+                    android:layout_marginRight="@dimen/space_5"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="16.0sp" />
+
+                <ImageView
+                    android:id="@+id/store_search_icon"
+                    android:layout_width="21.0dip"
+                    android:layout_height="21.0dip"
+                    android:layout_centerVertical="true"
+                    android:layout_alignLeft="@id/keyWord"
+                    android:layout_marginRight="4.0dip"
+                    android:background="@drawable/icon_search_img" />
+
+                <EditText
+                    android:id="@+id/city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5.0dip"
+                    android:background="@color/white"
+                    android:hint="请输入城市"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="16.0sp"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/search_btn"
+                android:layout_width="32.0dip"
+                android:layout_height="32.0dip"
+                android:layout_marginLeft="@dimen/space_5"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="4.0dip"
+                android:background="@drawable/icon_search_light" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/low_gray"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/searchButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="开始搜索" />
+
+            <Button
+                android:id="@+id/nextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="下一页" />
+        </LinearLayout>
+
+        <fragment
+            android:id="@+id/map"
+            class="com.amap.api.maps2d.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+</FrameLayout>

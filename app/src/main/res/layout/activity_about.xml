@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/window_background"
+    android:orientation="vertical"
+    android:scrollbars="none">
+
+
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.nick.smarthome.widgets.CustomerScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/main_toolbar_color"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/space_60"
+                    android:layout_height="@dimen/space_60"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/app_icon" />
+
+                <TextView
+                    android:id="@+id/tv_version_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_16" />
+
+            </LinearLayout>
+
+
+            <View
+                style="@style/h_line"
+                android:layout_marginTop="20dip" />
+
+            <RelativeLayout
+                android:id="@+id/rl_feedback"
+                style="@style/option_item_rl">
+
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:text="@string/fb_title"
+                    android:textColor="@color/text_dark"
+                    android:textSize="@dimen/text_size_16" />
+            </RelativeLayout>
+
+            <View style="@style/h_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_grade"
+                style="@style/option_item_rl">
+
+                <TextView
+                    style="@style/option_item_text_parent"
+                    android:text="去评分"
+                    android:textColor="@color/text_dark"
+                    android:textSize="@dimen/text_size_16" />
+            </RelativeLayout>
+
+            <View style="@style/h_line" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="50dip"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dip">
+
+                <TextView
+                    android:id="@+id/tv_site"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:text="官网"
+                    android:textColor="?android:textColorLink" />
+
+
+                <TextView
+                    android:id="@+id/tv_knowmore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="了解更多"
+                    android:textColor="?android:textColorLink" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/splash_copyright"
+                android:textColor="@color/text_dark" />
+
+        </LinearLayout>
+    </com.nick.smarthome.widgets.CustomerScrollView>
+</LinearLayout>
+

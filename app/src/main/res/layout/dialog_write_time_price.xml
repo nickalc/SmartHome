@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:minWidth="380dip"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_20"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edt_start_price"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/space_40"
+                android:layout_weight="4"
+                android:background="@drawable/text_bg"
+                android:gravity="center"
+                android:hint="输入起步价格"
+                android:inputType="number"
+                android:textColor="@color/text_dark"
+                android:textSize="@dimen/text_size_16" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/space_25"
+                    android:layout_height="@dimen/space_25"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_right" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_20"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edt_every_twohour_price"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/space_40"
+                android:layout_weight="4"
+                android:background="@drawable/text_bg"
+                android:gravity="center"
+                android:hint="每2小时价格"
+                android:inputType="number"
+                android:textColor="@color/text_dark"
+                android:textSize="@dimen/text_size_16" />
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/space_25"
+                    android:layout_height="@dimen/space_25"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_wrong" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/low"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="低"
+            android:textColor="@color/main_toolbar_color" />
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:maxHeight="5.0dip"
+            android:minHeight="5.0dip"
+            android:layout_weight="10"
+            android:max="10" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="高"
+            android:textColor="@color/main_toolbar_color" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/space_10"
+            android:text="调整时长优惠比例"
+            android:textColor="@color/text_light" />
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/space_20"
+        android:layout_marginLeft="@dimen/space_60"
+        android:layout_marginRight="@dimen/space_60"
+        android:layout_marginTop="@dimen/space_20"
+        android:background="@color/main_toolbar_color"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_20" />
+
+
+</LinearLayout>
+
+
+
+

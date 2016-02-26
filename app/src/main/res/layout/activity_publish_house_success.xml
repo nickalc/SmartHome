@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_house_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_10"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/space_8"
+        android:padding="@dimen/space_10"
+        android:text="我爱我家优质房源"
+        android:textColor="@color/text_dark"
+        android:textSize="@dimen/text_size_16" />
+
+
+    <TextView
+        android:id="@+id/tv_house_addr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/space_8"
+        android:text="江南新兴苑风之声7栋2单元"
+        android:textColor="@color/text_light"
+        android:textSize="@dimen/text_size_16" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_10"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_house_qrcode"
+            android:layout_width="@dimen/space_200"
+            android:layout_height="@dimen/space_200"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_qr_code" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/space_30"
+            android:layout_height="@dimen/space_30"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_circle_green" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:lineSpacingExtra="@dimen/space_8"
+            android:padding="@dimen/space_10"
+            android:text="用于分享给用户扫描添加"
+            android:textColor="@color/text_light"
+            android:textSize="@dimen/text_size_16" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_40"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="@dimen/space_100"
+            android:layout_height="@dimen/space_100"
+            android:background="@drawable/image_round_normal"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/space_8"
+            android:padding="@dimen/space_10"
+            android:text="截图"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_16" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

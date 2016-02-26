@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windows_bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.nick.smarthome.widgets.CustomerScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/rootview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/windows_gray_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/rl_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_5"
+            android:background="@color/windows_bg"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:padding="@dimen/space_16">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="@dimen/space_100"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/space_4"
+                android:text="输入标题"
+                android:textColor="@color/text_dark"
+                android:textSize="@dimen/text_size_16" />
+
+            <EditText
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_toRightOf="@+id/addr_location"
+                android:background="@null"
+                android:text=""
+                android:textColor="@color/text_dark"
+                android:textSize="@dimen/text_size_16" />
+        </LinearLayout>
+
+        <View style="@style/h_line" />
+
+        <LinearLayout
+            android:id="@+id/rl_addr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/windows_bg"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:padding="@dimen/space_16">
+
+            <TextView
+                android:id="@+id/addr_location"
+                android:layout_width="@dimen/space_100"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/space_4"
+                android:text="输入地址"
+                android:textColor="@color/text_dark"
+                android:textSize="@dimen/text_size_16" />
+
+            <EditText
+                android:id="@+id/tv_addr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_toRightOf="@+id/addr_location"
+                android:background="@null"
+                android:text=""
+                android:textColor="@color/text_dark"
+                android:textSize="@dimen/text_size_16" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_10"
+            android:background="@color/windows_bg"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/space_10"
+                android:text="@string/add_lock"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_size_16" />
+
+            <LinearLayout
+                android:id="@+id/ll_add_lock"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_40"
+                android:layout_marginLeft="@dimen/space_15"
+                android:layout_marginRight="@dimen/space_15"
+                android:background="@color/light_transparent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/actionbar_icon_add" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/space_5"
+                android:text="已添加锁"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_size_14" />
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:id="@+id/lock_list"
+                android:layout_height="200dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/space_10"
+            android:background="@color/windows_bg"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/btn_do_publish"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_40"
+                android:layout_marginLeft="@dimen/space_49"
+                android:layout_marginRight="@dimen/space_49"
+                android:layout_marginTop="@dimen/space_20"
+                android:layout_marginBottom="@dimen/space_20"
+                android:background="@color/main_toolbar_color"
+                android:gravity="center"
+                android:text="@string/do_publish"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_18" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </com.nick.smarthome.widgets.CustomerScrollView>
+
+</LinearLayout>

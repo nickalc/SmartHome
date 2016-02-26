@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <string-array name="choose_picture">
+        <item>相册</item>
+        <item>相机</item>
+    </string-array>
+
+    <string-array name="choose_sex">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+
+    <string-array name="WheelArrayConstellation">
+        <item>Aquarius</item>
+        <item>Pisces</item>
+        <item>Aries</item>
+        <item>Taurus</item>
+        <item>Gemini</item>
+        <item>Cancer</item>
+        <item>Leo</item>
+        <item>Virgo</item>
+        <item>Libra</item>
+        <item>Scorpio</item>
+        <item>Sagittarius</item>
+        <item>Capricorn</item>
+    </string-array>
+
+    <string-array name="lockTimeBucket">
+        <item>2小时计费</item>
+        <item>4小时计费</item>
+        <item>6小时计费</item>
+        <item>8小时计费</item>
+        <item>10小时计费</item>
+        <item>12小时计费</item>
+        <item>夜间计费</item>
+    </string-array>
+
+
+    <string-array name="defaultLockTimeBucket">
+        <item>8:00--10:00</item>
+        <item>8:00--12:00</item>
+        <item>8:00--14:00</item>
+        <item>8:00--16:00</item>
+        <item>8:00--18:00</item>
+        <item>8:00--20:00</item>
+        <item>20:00--8:00</item>
+    </string-array>
+
+    <string-array name="orderTimeBucket">
+        <item>08:00--10:00</item>
+        <item>10:00--12:00</item>
+        <item>12:00--14:00</item>
+        <item>14:00--16:00</item>
+        <item>16:00--18:00</item>
+        <item>18:00--20:00</item>
+        <item>20:00--08:00</item>
+    </string-array>
+    
+    <string-array name="timechedule">
+        <item>08:00</item>
+        <item>10:00</item>
+        <item>12:00</item>
+        <item>14:00</item>
+        <item>16:00</item>
+        <item>18:00</item>
+        <item>20:00</item>
+    </string-array>
+</resources>

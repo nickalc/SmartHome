@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name">手源</string>
+    <string name="app_en_name">SOLEYARD</string>
+    <string name="splash_copyright">Copyright &#169; 2015 SmartHome All Rights Reserved\nPower </string>
+    <string name="splash_slogan">看尽生活中的点滴</string>
+    <string name="splash_version">V %1$s</string>
+
+    <string name="main_tab_name_nearby">附近</string>
+    <string name="main_tab_name_search">搜索</string>
+    <string name="main_tab_name_my">我的</string>
+    <string name="login">登陆</string>
+    <string name="register">注册</string>
+    <string name="next">下一步</string>
+    <string name="finish_register">完成注册</string>
+    <string name="finish">完成</string>
+    <string name="confirm">确认</string>
+    <string name="cancle">取消</string>
+    <string name="publish_house">发布</string>
+    <string name="modify_house">我的房源编辑</string>
+    <string name="do_publish">我要发布</string>
+    <string name="publish_success">发布成功</string>
+    <string name="do_order">我要下单</string>
+    <string name="do_pay">我要付款</string>
+    <string name="lock_info">锁的信息</string>
+    <string name="band_lock">绑定锁</string>
+    <string name="pay">支付</string>
+    <string name="pay_finish">支付完成</string>
+    <string name="detail">详情</string>
+
+    <string name="personal_info">个人信息</string>
+    <string name="my_key">我的钥匙</string>
+    <string name="my_house_resource">我的房源</string>
+    <string name="my_lock">我的锁</string>
+    <string name="trade_information">交易信息</string>
+    <string name="my_setting">设置</string>
+    <string name="about_title">关于手源</string>
+    <string name="fb_title">意见反馈</string>
+    <string name="add_lock">添加锁</string>
+    <string name="customer_auth">用户身份验证</string>
+    <string name="upload_pic">上传照片</string>
+    
+    <string name="repeat_text">续订</string>
+    <string name="my_information">我的信息</string>
+    <string name="scan_text">扫一扫</string>
+    <string name="btn_history">历史</string>
+    <string name="btn_picture">图片</string>
+    <string name="btn_light">灯光</string>
+    <string name="btn_ok">确定</string>
+    <string name="qrcode">二维码</string>
+    <string name="barcode">条形码</string>
+    <string name="tips_open_camera_error">打开相机失败,请确保允许应用使用相机权限后重试!</string>
+    <string name="tips_decode_null">未解析到任何数据</string>
+    <string name="title_image_picker">本地相册</string>
+    <string name="feedback_welcome_info">感谢您提出反馈意见,我会尽快回复</string>
+
+    <string name="error_network">搜索失败,请检查网络连接！</string>
+    <string name="error_key">key验证无效！</string>
+    <string name="error_other">未知错误，请稍后重试!错误码为</string>
+    <string name="no_result">对不起，没有搜索到相关数据！</string>
+    <string name="common_load_more_end">没有更多了!</string>
+
+    <string name="distance">距离</string>
+    <string name="price">价格</string>
+    <string name="qr_code_tip">扫一扫上面的二维码，加我为好友</string>
+    <string name="qr_code_tip2">(长按保存到本地)</string>
+
+    <string name="share_to">分享到</string>
+    <string name="platform_qq">QQ</string>
+    <string name="platform_copy_link">复制链接</string>
+    <string name="platform_more_option">更多</string>
+    <string name="platform_sina">微博</string>
+    <string name="platform_weichat">微信</string>
+    <string name="platform_weichat_circle">朋友圈</string>
+    <string name="errcode_success">分享成功</string>
+    <string name="errcode_cancel">分享取消</string>
+    <string name="errcode_deny">分享被拒绝</string>
+    <string name="errcode_unknown">分享失败</string>
+
+    <string name="my_information_unlogin_tips">未登录</string>
+    <string name="double_click_exit">再按一次退出</string>
+
+
+</resources>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/window_background"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.nick.smarthome.widgets.MyScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:id="@+id/indicator_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="10dip"
+                    android:background="#e0000000"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_12"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_5"
+                android:background="@color/lightest_gray"
+                android:orientation="vertical"
+                android:padding="@dimen/space_5">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/space_5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_house_title"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="left|center_vertical"
+                        android:singleLine="true"
+                        android:text="南京江宁"
+                        android:textColor="@color/text_dark"
+                        android:textSize="@dimen/text_size_18" />
+
+                    <TextView
+                        android:id="@+id/tv_house_address"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="left|center_vertical"
+                        android:paddingBottom="@dimen/space_2"
+                        android:text="地址"
+                        android:textColor="@color/text_dark"
+                        android:textSize="@dimen/text_size_14" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/space_0"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_house_price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space_5"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="0元"
+                        android:textColor="@color/orange"
+                        android:textSize="@dimen/text_size_24" />
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="3"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/space_30"
+                        android:gravity="right|center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/room_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:text="房间"
+                            android:textColor="@color/text_dark"
+                            android:textSize="@dimen/text_size_16" />
+
+                        <TextView
+                            android:id="@+id/tv_room_no"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/icon_circle_light_redlight_red"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_16"
+                            android:text="1" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/date_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_margin="@dimen/space_2" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_time_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="@dimen/space_5"
+                android:layout_marginRight="@dimen/space_5"
+                android:background="@color/windows_gray_bg">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/time_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/space_10"
+                android:background="@color/windows_bg"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/btn_do_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_40"
+                    android:layout_marginBottom="@dimen/space_20"
+                    android:layout_marginLeft="@dimen/space_49"
+                    android:layout_marginRight="@dimen/space_49"
+                    android:layout_marginTop="@dimen/space_20"
+                    android:background="@color/main_toolbar_color"
+                    android:gravity="center"
+                    android:text="@string/do_order"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_18" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.nick.smarthome.widgets.MyScrollView>
+
+</LinearLayout>

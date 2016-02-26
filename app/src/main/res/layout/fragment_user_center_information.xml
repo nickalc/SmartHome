@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_user_center"
+    android:orientation="vertical" >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_item_background"
+        android:clickable="true"
+        android:padding="@dimen/space_16" >
+
+        <TextView
+            android:id="@+id/nickname"
+            android:layout_width="@dimen/space_100"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/space_4"
+            android:text="昵称"
+            android:textColor="@color/text_dark"
+            android:textSize="@dimen/text_size_16" />
+
+        <EditText
+            android:id="@+id/tv_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/nickname"
+            android:background="@null"
+            android:layout_gravity="left"
+            android:textColor="@color/text_dark"
+            android:textSize="@dimen/text_size_16" />
+    </LinearLayout>
+
+    <View
+        style="@style/h_line" />
+
+    <RelativeLayout
+        android:id="@+id/rl_sex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_item_background"
+        android:clickable="true"
+        android:orientation="horizontal"
+        android:padding="@dimen/space_16" >
+
+        <TextView
+            android:id="@+id/sex"
+            android:layout_width="@dimen/space_100"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/space_4"
+            android:text="性别"
+            android:textColor="@color/text_dark"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/tv_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/sex"
+            android:textColor="@color/text_dark"
+            android:textSize="@dimen/text_size_16" />
+    </RelativeLayout>
+
+    <View
+        style="@style/h_line" />
+
+    <RelativeLayout
+        android:id="@+id/rl_birthday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_item_background"
+        android:clickable="true"
+        android:orientation="horizontal"
+        android:padding="@dimen/space_16" >
+
+        <TextView
+            android:id="@+id/birthday"
+            android:layout_width="@dimen/space_100"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/space_4"
+            android:text="生日"
+            android:textColor="@color/text_dark"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/tv_birthday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/birthday"
+            android:textColor="@color/text_dark"
+            android:textSize="@dimen/text_size_16" />
+    </RelativeLayout>
+
+    <View
+        style="@style/h_line" />
+
+    <LinearLayout
+        android:id="@+id/rl_addr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/windows_bg"
+        android:clickable="true"
+        android:orientation="horizontal"
+        android:padding="@dimen/space_16" >
+
+        <TextView
+            android:id="@+id/addr_location"
+            android:layout_width="@dimen/space_100"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/space_4"
+            android:text="所在地"
+            android:textColor="@color/text_dark"
+            android:textSize="@dimen/text_size_16" />
+
+        <EditText
+            android:id="@+id/tv_addr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/addr_location"
+            android:background="@null"
+            android:layout_gravity="left"
+            android:textColor="@color/text_dark"
+            android:text=""
+            android:textSize="@dimen/text_size_16" />
+    </LinearLayout>
+
+    <View
+        style="@style/h_line" />
+
+    <LinearLayout
+        android:id="@+id/rl_interest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/windows_bg"
+        android:clickable="true"
+        android:orientation="horizontal"
+        android:padding="@dimen/space_16" >
+
+        <TextView
+            android:id="@+id/interest"
+            android:layout_width="@dimen/space_100"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/space_4"
+            android:text="兴趣爱好"
+            android:textColor="@color/text_dark"
+            android:textSize="@dimen/text_size_16" />
+
+        <EditText
+            android:id="@+id/tv_interest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/interest"
+            android:background="@null"
+            android:layout_gravity="left"
+            android:textColor="@color/text_dark"
+            android:textSize="@dimen/text_size_16" />
+    </LinearLayout>
+
+    <View
+        style="@style/h_line" />
+
+
+
+</LinearLayout>

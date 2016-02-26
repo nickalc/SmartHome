@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windows_gray_bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/windows_gray_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_10"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_add_authentic"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="@dimen/space_5"
+                android:src="@drawable/icon_add_pic" />
+
+            <RelativeLayout
+                android:id="@+id/rl_img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="@dimen/space_5"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/light_gray"
+                    android:clickable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/app_icon" />
+
+                <ImageView
+                    android:id="@+id/iv_clear_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/ib_clear_image_selector" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/space_30"
+                android:gravity="center"
+                android:text="上传图片"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_size_16" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_40"
+                android:layout_marginTop="@dimen/space_10"
+                android:gravity="center"
+                android:text="验证身份信息"
+                android:textColor="@color/main_toolbar_color"
+                android:textSize="@dimen/text_size_18" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:lineSpacingExtra="@dimen/space_8"
+                android:paddingLeft="@dimen/space_20"
+                android:paddingRight="@dimen/space_20"
+                android:text="为了确保使用我们平台的用户是对他人,并且不会对他人造成危害,我们所有的用户都是实名认证,所以请您上传"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_size_16" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/space_30"
+                    android:layout_height="@dimen/space_30"
+                    android:layout_marginLeft="@dimen/space_20"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/icon_circle_green" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:lineSpacingExtra="@dimen/space_8"
+                    android:padding="@dimen/space_10"
+                    android:text="本人手持身份证原件拍照的色彩照片"
+                    android:textColor="@color/text_light"
+                    android:textSize="@dimen/text_size_16" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/space_30"
+                    android:layout_height="@dimen/space_30"
+                    android:layout_marginLeft="@dimen/space_20"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/icon_circle_green" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:lineSpacingExtra="@dimen/space_8"
+                    android:padding="@dimen/space_10"
+                    android:text="身份证原件正面色彩照片"
+                    android:textColor="@color/text_light"
+                    android:textSize="@dimen/text_size_16" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/space_20"
+            android:background="@drawable/light_green_bg"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btn_upload_auth"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginTop="@dimen/space_30"
+                android:layout_marginLeft="@dimen/space_30"
+                android:background="@color/main_toolbar_color"
+                android:gravity="center"
+                android:paddingLeft="@dimen/space_100"
+                android:paddingRight="@dimen/space_100"
+                android:text="完成"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_18" />
+
+            <TextView
+                android:id="@+id/skip_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_0"
+                android:layout_marginTop="@dimen/space_30"
+                android:lineSpacingExtra="@dimen/space_8"
+                android:padding="@dimen/space_20"
+                android:text="跳过"
+                android:textColor="@color/text_dark"
+                android:textSize="@dimen/text_size_18" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

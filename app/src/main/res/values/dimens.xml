@@ -1,0 +1,96 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="splash_bottom_padding">10dp</dimen>
+    <dimen name="splash_middle_top_margin">10dp</dimen>
+    <dimen name="splash_bottom_margin">40dp</dimen>
+    <dimen name="splash_top_margin">130dp</dimen>
+
+    <dimen name="text_size_32">32.0dip</dimen>
+    <dimen name="text_size_31">31.0dip</dimen>
+    <dimen name="text_size_30">30.0dip</dimen>
+    <dimen name="text_size_29">29.0dip</dimen>
+    <dimen name="text_size_28">28.0dip</dimen>
+    <dimen name="text_size_27">27.0dip</dimen>
+    <dimen name="text_size_26">26.0dip</dimen>
+    <dimen name="text_size_25">25.0dip</dimen>
+    <dimen name="text_size_24">24.0dip</dimen>
+    <dimen name="text_size_23">23.0dip</dimen>
+    <dimen name="text_size_22">22.0dip</dimen>
+    <dimen name="text_size_21">21.0dip</dimen>
+    <dimen name="text_size_20">20.0dip</dimen>
+    <dimen name="text_size_19">19.0dip</dimen>
+    <dimen name="text_size_18">18.0dip</dimen>
+    <dimen name="text_size_17">17.0dip</dimen>
+    <dimen name="text_size_16">16.0dip</dimen>
+    <dimen name="text_size_15">15.0dip</dimen>
+    <dimen name="text_size_14">14.0dip</dimen>
+    <dimen name="text_size_13">13.0dip</dimen>
+    <dimen name="text_size_12">12.0dip</dimen>
+    <dimen name="text_size_11">11.0dip</dimen>
+    <dimen name="text_size_10">10.0dip</dimen>
+    <dimen name="text_size_9">9.0dip</dimen>
+    <dimen name="text_size_8">8.0dip</dimen>
+    <dimen name="text_size_7">7.0dip</dimen>
+    <dimen name="space_200">200.0dip</dimen>
+    <dimen name="space_100">100.0dip</dimen>
+    <dimen name="space_60">60dp</dimen>
+    <dimen name="space_49">49dip</dimen>
+    <dimen name="space_40">40.0dip</dimen>
+    <dimen name="space_35">35.0dip</dimen>
+    <dimen name="space_30">30.0dip</dimen>
+    <dimen name="space_29">29.0dip</dimen>
+    <dimen name="space_28">28.0dip</dimen>
+    <dimen name="space_27">27.0dip</dimen>
+    <dimen name="space_26">26.0dip</dimen>
+    <dimen name="space_25">25.0dip</dimen>
+    <dimen name="space_24">24.0dip</dimen>
+    <dimen name="space_23">23.0dip</dimen>
+    <dimen name="space_22">22.0dip</dimen>
+    <dimen name="space_21">21.0dip</dimen>
+    <dimen name="space_20">20.0dip</dimen>
+    <dimen name="space_19">19.0dip</dimen>
+    <dimen name="space_18">18.0dip</dimen>
+    <dimen name="space_17">17.0dip</dimen>
+    <dimen name="space_16">16.0dip</dimen>
+    <dimen name="space_15">15.0dip</dimen>
+    <dimen name="space_14">14.0dip</dimen>
+    <dimen name="space_13">13.0dip</dimen>
+    <dimen name="space_12">12.0dip</dimen>
+    <dimen name="space_11">11.0dip</dimen>
+    <dimen name="space_10">10.0dip</dimen>
+    <dimen name="space_9">9.0dip</dimen>
+    <dimen name="space_8">8.0dip</dimen>
+    <dimen name="space_7">7.0dip</dimen>
+    <dimen name="space_6">6.0dip</dimen>
+    <dimen name="space_5">5.0dip</dimen>
+    <dimen name="space_4">4.0dip</dimen>
+    <dimen name="space_3">3.0dip</dimen>
+    <dimen name="space_2">2.0dip</dimen>
+    <dimen name="space_1">1.0dip</dimen>
+    <dimen name="space_0">0.0dip</dimen>
+
+    <dimen name="dialog_margin">7.0dip</dimen>
+    <dimen name="global_padding">8.0dip</dimen>
+    <dimen name="global_dialog_padding">15.0dip</dimen>
+    <dimen name="text_regular_primary_size">14.0dip</dimen>
+    <dimen name="text_large_secondary_size">12.0dip</dimen>
+    <dimen name="text_large_primary_size">16.0dip</dimen>
+
+    <dimen name="qrcode_crop_width">200dp</dimen>
+    <dimen name="qrcode_crop_height">200dp</dimen>
+
+    <dimen name="barcode_crop_width">260dp</dimen>
+    <dimen name="barcode_crop_height">140dp</dimen>
+
+    <!--通用尺寸-->
+    <!--General sizes-->
+    <dimen name="WheelItemSpace">8dp</dimen>
+    <dimen name="WheelPadding">5dp</dimen>
+    <dimen name="WheelTextSize">20sp</dimen>
+    <dimen name="TextSizeLarge">18sp</dimen>
+    <dimen name="ItemSpaceLarge">8dp</dimen>
+    <dimen name="WheelLabelTextSize">12sp</dimen>
+</resources>

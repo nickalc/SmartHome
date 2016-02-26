@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_no_business_list_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lightest_green"
+        android:layout_marginBottom="@dimen/space_2"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/sort"
+                android:layout_width="@dimen/space_30"
+                android:layout_height="@dimen/space_30"
+                android:layout_margin="@dimen/space_10"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:id="@+id/no_business_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_10"
+                android:ellipsize="end"
+                android:text="2015年12月27日 "
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_size_16" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="@dimen/space_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/tv_time_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="@dimen/space_30"
+                android:textSize="@dimen/text_size_16"
+                android:textColor="@color/orange"
+                android:inputType="number"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_16"
+                android:textColor="@color/orange"
+                android:text="元" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

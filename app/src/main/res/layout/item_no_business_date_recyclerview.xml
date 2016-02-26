@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_no_business_list_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lightest_gray"
+        android:layout_marginBottom="@dimen/space_2"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sort"
+                android:layout_width="@dimen/space_30"
+                android:layout_height="@dimen/space_30"
+                android:layout_margin="@dimen/space_10"
+                android:text="1"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_12"
+                android:background="@drawable/icon_circle_green" />
+
+            <TextView
+                android:id="@+id/no_business_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_10"
+                android:ellipsize="end"
+                android:text="2015年12月27日 "
+                android:textColor="@color/orange"
+                android:textSize="@dimen/text_size_16" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="@dimen/space_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_delete_btn"
+                android:layout_width="@dimen/space_30"
+                android:layout_height="@dimen/space_30"
+                android:layout_margin="@dimen/space_10"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_delele_x" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

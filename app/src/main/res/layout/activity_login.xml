@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/list_item_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/lo_bg"
+        android:orientation="vertical">
+
+
+        <com.nick.smarthome.widgets.CircleImageView
+            android:id="@+id/iv_avatar1"
+            android:layout_width="@dimen/space_100"
+            android:layout_height="@dimen/space_100"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/space_60"
+            android:layout_marginTop="@dimen/space_60"
+            android:contentDescription="@null"
+            android:src="@mipmap/widget_dface"
+            app:border_color="@color/white"
+            app:border_width="3dip" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_49"
+            android:layout_marginRight="@dimen/space_49"
+            android:background="#BDBEC5"
+            android:orientation="vertical">
+
+            <com.nick.smarthome.widgets.ClearEditText
+                android:id="@+id/edt_user"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_49"
+                android:layout_gravity="center"
+                android:background="#BDBEC5"
+                android:drawableLeft="@drawable/user_icon"
+                android:hint="输入账号"
+                android:inputType="textPersonName"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textSize="@dimen/text_size_16" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_1"
+                android:layout_marginLeft="@dimen/space_20"
+                android:layout_marginRight="@dimen/space_20"
+                android:background="@color/main_toolbar_color" />
+
+            <com.nick.smarthome.widgets.ClearEditText
+                android:id="@+id/edt_password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_49"
+                android:layout_gravity="center"
+                android:background="#BDBEC5"
+                android:drawableLeft="@drawable/pwd_icon"
+                android:hint="输入密码"
+                android:inputType="textPassword"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textSize="@dimen/text_size_16" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/space_49"
+            android:layout_marginRight="@dimen/space_49"
+            android:layout_marginTop="@dimen/space_30"
+            android:background="@color/main_toolbar_color"
+            android:text="@string/login"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_20" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/space_49"
+            android:layout_marginRight="@dimen/space_49"
+            android:layout_marginTop="@dimen/space_20"
+            android:background="@color/light_transparent"
+            android:text="@string/register"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+</FrameLayout>

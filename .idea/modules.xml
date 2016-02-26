@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BaseLibrary/BaseLibrary.iml" filepath="$PROJECT_DIR$/BaseLibrary/BaseLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SmartHome.iml" filepath="$PROJECT_DIR$/SmartHome.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/multi-image-selector/multi-image-selector.iml" filepath="$PROJECT_DIR$/multi-image-selector/multi-image-selector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/social_sdk_library_project/social_sdk_library_project.iml" filepath="$PROJECT_DIR$/social_sdk_library_project/social_sdk_library_project.iml" />
+    </modules>
+  </component>
+</project>

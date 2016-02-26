@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#54ab99</color>
+    <color name="colorPrimaryDark">#54ab99</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- 常用颜色值 -->
+    <color name="white40">#40FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#808080</color>
+    <color name="low_gray">#e2e1e1</color>
+    <color name="red">#FF0000</color>
+    <color name="gold">#FFD700</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="green">#008000</color>
+    <color name="purple">#800080</color>
+    <color name="pink">#FFC0CB</color>
+    <color name="orange">#FFA500</color>
+    <color name="light_orange">#fde29a</color>
+    <color name="lemonyellow">#FFFACD</color>
+    <color name="graywhite">#F5F5F5</color>
+    <color name="grayslate">#708090</color>
+    <color name="lightblue">#0083FF</color>
+
+    <color name="main_toolbar_color">#54ab99</color>
+    <color name="light_green">#b1d8d7</color>
+    <color name="lightest_green">#dbe7e5</color>
+    <color name="line_color">#e7e7e7</color>
+    <color name="windows_bg">#fafafa</color>
+    <color name="windows_gray_bg">#eeeeee</color>
+
+    <color name="text_dark">#af000000</color>
+    <color name="text_light">#3f000000</color>
+    <color name="light_gray">#1a000000</color>
+    <color name="lightest_gray">#0a000000</color>
+    <color name="light_transparent">#80A09DAB</color>
+    <color name="lightest_transparent">#44aaaaaa</color>
+    <color name="main_green">#40AA53</color>
+    <color name="main_gray">#9A9A9A</color>
+    <color name="main_black">#333</color>
+    <color name="main_purple">#576B95</color>
+    <color name="transparent">#00000000</color>
+    <color name="window_background">#EBEBEB</color>
+    <color name="ui_dialog_list_text">#5E5E5E</color>
+    <color name="list_divider_color">#DADADA</color>
+    <color name="ui_dialog_divider">@color/list_divider_color</color>
+
+    <color name="common_list_item_bg_pressed_color">#FFEEEEEE</color>
+    <color name="common_list_item_bg_normal_color">#FFFEFEFE</color>
+
+    <color name="layout_bg_normal">#fafafa</color>
+    <color name="layout_bg_pressed">#dfdfdf</color>
+
+    <color name="ColorButtonRelease">#FCC689</color>
+    <color name="ColorButtonPressed">#FF7438</color>
+    <color name="ColorButtonDisable">#EEE</color>
+</resources>
