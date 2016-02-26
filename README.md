@@ -4,10 +4,10 @@
 
 #ScreenShot
 <img src="./screenshot/1.jpg" width="30%" height="30%">
-<img src="./screenshot/2" width="30%" height="30%">
+<img src="./screenshot/2.jpg" width="30%" height="30%">
 
-<img src="./screenshot/3" width="30%" height="30%">
-<img src="./screenshot/4" width="30%" height="30%">
+<img src="./screenshot/3.jpg" width="30%" height="30%">
+<img src="./screenshot/4.jpg" width="30%" height="30%">
 
 - Email: nickdevp@gmail.com
 
