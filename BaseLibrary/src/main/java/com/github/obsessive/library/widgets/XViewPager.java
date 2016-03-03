@@ -22,10 +22,10 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 /**
- * Author:  Tau.Chen
- * Email:   1076559197@qq.com | tauchen1990@gmail.com
- * Date:    2014/11/25.
- * Description: customize ViewPager did scroll enable or not
+ * Author:  nick
+ * Email:   nickdevp@gmail.com
+ * Date:    15/4/12
+ * Description:
  */
 public class XViewPager extends ViewPager {
 

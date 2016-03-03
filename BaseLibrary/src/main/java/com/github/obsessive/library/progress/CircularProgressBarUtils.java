@@ -21,7 +21,10 @@ import android.animation.ValueAnimator;
 import static java.lang.Math.min;
 
 /**
- * Created by castorflex on 8/14/14.
+ * Author:  nick
+ * Email:   nickdevp@gmail.com
+ * Date:    15/12/09
+ * Description:
  */
 class CircularProgressBarUtils {
 

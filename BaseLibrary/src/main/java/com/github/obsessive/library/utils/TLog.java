@@ -19,10 +19,10 @@ package com.github.obsessive.library.utils;
 import android.util.Log;
 
 /**
- * Author:  Tau.Chen
- * Email:   1076559197@qq.com | tauchen1990@gmail.com
- * Date:    2015/3/10.
- * Description: Log utils
+ * Author:  nick
+ * Email:   nickdevp@gmail.com
+ * Date:    15/4/12
+ * Description:
  */
 public class TLog {
     /**

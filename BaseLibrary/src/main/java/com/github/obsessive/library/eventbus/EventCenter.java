@@ -17,9 +17,9 @@
 package com.github.obsessive.library.eventbus;
 
 /**
- * Author:  Tau.Chen
- * Email:   1076559197@qq.com | tauchen1990@gmail.com
- * Date:    2015/3/10.
+ * Author:  nick
+ * Email:   nickdevp@gmail.com
+ * Date:    15/12/09
  * Description:
  */
 public class EventCenter<T> {

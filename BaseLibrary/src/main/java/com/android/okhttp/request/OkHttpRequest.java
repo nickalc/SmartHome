@@ -9,7 +9,7 @@ import com.squareup.okhttp.RequestBody;
 import java.util.Map;
 
 /**
- * Created by zhy on 15/11/6.
+ * Created by nick on 15/11/6.
  */
 public abstract class OkHttpRequest
 {

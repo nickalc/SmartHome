@@ -16,6 +16,15 @@
             <option value="$PROJECT_DIR$/social_sdk_library_project" />
           </set>
         </option>
+        <option name="myModules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/BaseLibrary" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/multi-image-selector" />
+            <option value="$PROJECT_DIR$/social_sdk_library_project" />
+          </set>
+        </option>
       </GradleProjectSettings>
     </option>
   </component>

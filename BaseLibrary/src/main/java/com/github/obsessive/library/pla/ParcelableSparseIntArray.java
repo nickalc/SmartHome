@@ -22,7 +22,10 @@ import android.util.SparseArray;
 import android.util.SparseIntArray;
 
 /**
- * Created by juyeong on 7/15/14.
+ * Author:  nick
+ * Email:   nickdevp@gmail.com
+ * Date:    15/12/09
+ * Description:
  */
 public class ParcelableSparseIntArray extends SparseIntArray implements Parcelable {
 

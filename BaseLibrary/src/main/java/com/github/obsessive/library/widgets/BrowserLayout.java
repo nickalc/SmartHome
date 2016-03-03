@@ -35,9 +35,9 @@ import com.github.obsessive.library.R;
 import com.github.obsessive.library.utils.CommonUtils;
 
 /**
- * Author:  Tau.Chen
- * Email:   1076559197@qq.com | tauchen1990@gmail.com
- * Date:    2015/3/31.
+ * Author:  nick
+ * Email:   nickdevp@gmail.com
+ * Date:    15/4/12
  * Description:
  */
 public class BrowserLayout extends LinearLayout {

@@ -313,7 +313,7 @@ public class PayActivity extends BaseSwipeBackActivity implements View.OnClickLi
     public void pay() {
 
         // 订单
-        String orderInfo = getOrderInfo(houseTitle, houseAddr, "0.01");
+        String orderInfo = getOrderInfo(houseTitle, houseAddr, housePrice);
 
         // 对订单做RSA 签名
         String sign = sign(orderInfo);

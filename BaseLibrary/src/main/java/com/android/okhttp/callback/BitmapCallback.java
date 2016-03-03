@@ -8,7 +8,7 @@ import com.squareup.okhttp.Response;
 import java.io.IOException;
 
 /**
- * Created by zhy on 15/12/14.
+ * Created by nick on 15/12/14.
  */
 public abstract class BitmapCallback extends Callback<Bitmap>
 {

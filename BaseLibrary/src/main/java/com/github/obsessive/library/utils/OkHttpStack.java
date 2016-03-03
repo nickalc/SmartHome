@@ -42,9 +42,9 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Author:  Tau.Chen
- * Email:   1076559197@qq.com | tchen0707@gmail.com
- * Date:    15/8/17 10:01
+ * Author:  nick
+ * Email:   nickdevp@gmail.com
+ * Date:    15/4/12
  * Description:
  */
 public class OkHttpStack implements HttpStack {

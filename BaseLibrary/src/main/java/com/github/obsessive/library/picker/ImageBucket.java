@@ -23,9 +23,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Author:  Tau.Chen
- * Email:   1076559197@qq.com | tauchen1990@gmail.com
- * Date:    15/6/1.
+ * Author:  nick
+ * Email:   nickdevp@gmail.com
+ * Date:    15/12/09
  * Description:
  */
 public class ImageBucket implements Parcelable {

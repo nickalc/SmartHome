@@ -29,9 +29,9 @@ import com.github.obsessive.library.widgets.BrowserLayout;
 import butterknife.ButterKnife;
 
 /**
- * Author:  Tau.Chen
- * Email:   1076559197@qq.com | tauchen1990@gmail.com
- * Date:    15/7/24
+ * Author:  nick
+ * Email:   nickdevp@gmail.com
+ * Date:    15/12/09
  * Description:
  */
 public class BaseWebActivity extends BaseSwipeBackCompatActivity {

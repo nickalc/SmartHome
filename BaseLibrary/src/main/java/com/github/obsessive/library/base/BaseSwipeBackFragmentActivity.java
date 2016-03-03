@@ -25,9 +25,9 @@ import com.github.obsessive.library.swipeback.SwipeBackLayout;
 import com.github.obsessive.library.swipeback.Utils;
 
 /**
- * Author:  Tau.Chen
- * Email:   1076559197@qq.com | tauchen1990@gmail.com
- * Date:    2015/3/11.
+ * Author:  nick
+ * Email:   nickdevp@gmail.com
+ * Date:    15/12/09
  * Description:
  */
 public abstract class BaseSwipeBackFragmentActivity extends BaseFragmentActivity implements SwipeBackActivityBase {

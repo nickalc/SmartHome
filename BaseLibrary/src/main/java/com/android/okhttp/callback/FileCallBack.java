@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Created by zhy on 15/12/15.
+ * Created by nick on 15/12/15.
  */
 public abstract class FileCallBack extends Callback<File>
 {

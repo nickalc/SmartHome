@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by zhy on 15/12/15.
+ * Created by nick on 15/12/15.
  */
 public class RequestCall
 {

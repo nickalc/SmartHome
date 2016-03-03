@@ -23,7 +23,7 @@ import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSession;
 
 /**
- * Created by zhy on 15/8/17.
+ * Created by nick on 15/8/17.
  */
 public class OkHttpUtils
 {

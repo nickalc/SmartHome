@@ -26,7 +26,10 @@ import android.widget.ProgressBar;
 import com.github.obsessive.library.R;
 
 /**
- * Created by castorflex on 11/10/13.
+ * Author:  nick
+ * Email:   nickdevp@gmail.com
+ * Date:    15/12/09
+ * Description:
  */
 public class CircularProgressBar extends ProgressBar {
 

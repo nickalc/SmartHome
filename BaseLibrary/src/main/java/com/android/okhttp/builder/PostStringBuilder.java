@@ -8,7 +8,7 @@ import java.util.IdentityHashMap;
 import java.util.Map;
 
 /**
- * Created by zhy on 15/12/14.
+ * Created by nick on 15/12/14.
  */
 public class PostStringBuilder extends OkHttpRequestBuilder
 {

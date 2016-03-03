@@ -26,9 +26,9 @@ import java.util.Date;
 import java.util.regex.Pattern;
 
 /**
- * Author:  Tau.Chen
- * Email:   1076559197@qq.com | tauchen1990@gmail.com
- * Date:    2015/3/10.
+ * Author:  nick
+ * Email:   nickdevp@gmail.com
+ * Date:    15/4/12
  * Description:
  */
 public class CommonUtils {
