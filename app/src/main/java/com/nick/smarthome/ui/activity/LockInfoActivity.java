@@ -53,7 +53,7 @@ import com.nick.smarthome.utils.UIHelper;
 import com.nick.smarthome.widgets.MyLinearLayoutManager;
 import com.nick.smarthome.widgets.wheelpicker.core.AbstractWheelPicker;
 import com.nick.smarthome.widgets.wheelpicker.widget.curved.WheelDatePicker;
-import com.nick.smarthome.widgets.wheelpicker.widget.curved.WheelMonthPicker;
+import com.nick.smarthome.widgets.wheelpicker.widget.curved.WheelRoomNoPicker;
 import com.squareup.okhttp.Request;
 
 import org.json.JSONArray;
@@ -91,7 +91,7 @@ public class LockInfoActivity extends BaseSwipeBackActivity implements View.OnCl
     RecyclerView mRecyclerView;
 
     @InjectView(R.id.main_wheel_room)
-    WheelMonthPicker wheelRoomPicker;
+    WheelRoomNoPicker wheelRoomPicker;
 
     @InjectView(R.id.set_no_business_date)
     WheelDatePicker wheelNoBusinessPicker;
@@ -285,7 +285,7 @@ public class LockInfoActivity extends BaseSwipeBackActivity implements View.OnCl
         wheelRoomPicker.setPadding(padding, padding, padding, padding);
         wheelRoomPicker.setTextSize(textSize);
         wheelRoomPicker.setItemSpace(itemSpace);
-        wheelRoomPicker.setItemCount(11);
+        wheelRoomPicker.setItemCount(50);
         wheelRoomPicker.setCurrentMonth(1);
         wheelRoomPicker.setOrientation(LinearLayout.HORIZONTAL);
         wheelRoomPicker.setOnWheelChangeListener(new AbstractWheelPicker.SimpleWheelChangeListener() {

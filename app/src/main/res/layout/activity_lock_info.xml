@@ -131,7 +131,7 @@
                     android:textSize="@dimen/text_size_16" />
 
 
-                <com.nick.smarthome.widgets.wheelpicker.widget.curved.WheelMonthPicker
+                <com.nick.smarthome.widgets.wheelpicker.widget.curved.WheelRoomNoPicker
                     android:id="@+id/main_wheel_room"
                     android:layout_width="100dp"
                     android:visibility="visible"

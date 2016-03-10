@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">手源</string>
+    <string name="app_name">Soleyard</string>
     <string name="app_en_name">SOLEYARD</string>
-    <string name="splash_copyright">Copyright &#169; 2015 SmartHome All Rights Reserved\nPower </string>
+    <string name="splash_copyright">Copyright &#169; 2015 Soleyard All Rights Reserved\nPower </string>
     <string name="splash_slogan">看尽生活中的点滴</string>
     <string name="splash_version">V %1$s</string>
 
