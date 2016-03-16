@@ -203,8 +203,11 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
 
         initDatas();
 
-        //    getDate();
+        doOrderBtn.setBackgroundColor(getResources().getColor(R.color.light_gray));
+        doOrderBtn.setText("最低4小时");
+        doOrderBtn.setClickable(false);
 
+        //    getDate();
         //   getTimePriceDate();
 
         timeRecyclerview.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
@@ -615,6 +618,7 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
     private void calculateNewTotalPrice() {
 
         int timesLen = allTimeItems.size();
+
         int[] X = new int[51];
         X[0] = 0;
         X[50] = 0;
@@ -667,6 +671,23 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
 
         for (int i = 0; i < P.length; i++)
             Psum += P[i];
+
+        int count = 0;
+        for(int item : X){
+            if(item == 1){
+                count ++;
+            }
+        }
+
+        if (count >=2) {
+            doOrderBtn.setBackgroundColor(getResources().getColor(R.color.main_toolbar_color));
+            doOrderBtn.setText("我要下单");
+            doOrderBtn.setClickable(true);
+        }else {
+            doOrderBtn.setBackgroundColor(getResources().getColor(R.color.light_gray));
+            doOrderBtn.setText("最低4小时");
+            doOrderBtn.setClickable(false);
+        }
 
         totalPrice = Psum;
         tvHousePrice.setText(Psum + "元");

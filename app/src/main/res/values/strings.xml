@@ -10,6 +10,7 @@
     <string name="main_tab_name_my">我的</string>
     <string name="login">登陆</string>
     <string name="register">注册</string>
+    <string name="find_password">找回密码</string>
     <string name="next">下一步</string>
     <string name="finish_register">完成注册</string>
     <string name="finish">完成</string>

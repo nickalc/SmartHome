@@ -1,5 +1,6 @@
 package com.nick.smarthome.ui.adapter;
 
+import android.support.v7.widget.CardView;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.Button;
@@ -53,6 +54,10 @@ public class ViewHolder {
     }
     public Button getButton(int id) {
 
+        return get(id);
+    }
+
+    public CardView getCardView(int id){
         return get(id);
     }
 

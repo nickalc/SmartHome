@@ -67,6 +67,16 @@
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/tv_forgot_psw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space_10"
+            android:layout_marginRight="@dimen/space_49"
+            android:textColor="@color/white"
+            android:gravity="right"
+            android:text="忘记密码?"/>
+
         <Button
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
@@ -74,7 +84,7 @@
             android:layout_gravity="center"
             android:layout_marginLeft="@dimen/space_49"
             android:layout_marginRight="@dimen/space_49"
-            android:layout_marginTop="@dimen/space_30"
+            android:layout_marginTop="@dimen/space_20"
             android:background="@color/main_toolbar_color"
             android:text="@string/login"
             android:textColor="@color/white"

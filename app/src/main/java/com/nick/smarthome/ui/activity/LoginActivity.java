@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.android.okhttp.OkHttpUtils;
 import com.android.okhttp.callback.StringCallback;
@@ -53,6 +54,9 @@ public class LoginActivity extends BaseSwipeBackActivity implements View.OnClick
 
     @InjectView(R.id.btn_login)
     Button loginBtn;
+
+    @InjectView(R.id.tv_forgot_psw)
+    TextView tvForgotPsw;
 
     @InjectView(R.id.edt_user)
     ClearEditText edtUser;
@@ -224,7 +228,7 @@ public class LoginActivity extends BaseSwipeBackActivity implements View.OnClick
     }
 
     @Override
-    @OnClick({R.id.btn_login,R.id.btn_register})
+    @OnClick({R.id.btn_login,R.id.tv_forgot_psw,R.id.btn_register})
     public void onClick(View v) {
 
         switch (v.getId()){
@@ -234,6 +238,9 @@ public class LoginActivity extends BaseSwipeBackActivity implements View.OnClick
                 break;
             case R.id.btn_login:
                 doLogin();
+                break;
+            case R.id.tv_forgot_psw:
+                readyGo(ForgotPasswordActivity.class);
                 break;
             default:
                 break;

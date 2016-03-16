@@ -14,7 +14,11 @@
         android:layout_marginRight="@dimen/space_8"
         android:layout_marginTop="2dp"
         android:foreground="?attr/selectableItemBackground"
-        android:stateListAnimator="@anim/touch_raise">
+        android:stateListAnimator="@anim/touch_raise"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="2dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
 
 
         <RelativeLayout

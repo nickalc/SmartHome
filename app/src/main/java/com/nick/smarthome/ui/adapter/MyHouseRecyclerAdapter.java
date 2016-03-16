@@ -66,13 +66,6 @@ public class MyHouseRecyclerAdapter extends AutoRVAdapter{
             }
         });
 
-//        holder.getConvertView().findViewById(R.id.item_house_list_layout).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                Intent intent = new Intent(context, PayActivity.class);
-////                context.startActivity(intent);
-//            }
-//        });
     }
 
     public void removeItem(MyHouseListEntity entity) {

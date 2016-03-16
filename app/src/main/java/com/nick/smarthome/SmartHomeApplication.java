@@ -42,6 +42,7 @@ import com.nick.smarthome.api.ServerApiConstants;
 import com.nick.smarthome.utils.ImageLoaderHelper;
 import com.nick.smarthome.utils.VolleyHelper;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.squareup.leakcanary.LeakCanary;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.update.UmengUpdateAgent;
 
@@ -70,6 +71,8 @@ public class SmartHomeApplication extends Application {
         _resource = _context.getResources();
 
         initLng();
+
+        LeakCanary.install(this);
 
         MobclickAgent.setDebugMode(true);
         MobclickAgent.updateOnlineConfig(this);
