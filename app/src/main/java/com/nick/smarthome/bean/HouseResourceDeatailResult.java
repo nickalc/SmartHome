@@ -141,6 +141,7 @@ public class HouseResourceDeatailResult {
             private String photoUrl;
             private int houseDistance;
             private int houseId;
+            private String houseOwnerId;
             private String houseAdress;
 
             public void setHouseTitle(String houseTitle) {
@@ -181,6 +182,14 @@ public class HouseResourceDeatailResult {
 
             public String getHouseTitle() {
                 return houseTitle;
+            }
+
+            public String getHouseOwnerId() {
+                return houseOwnerId;
+            }
+
+            public void setHouseOwnerId(String houseOwnerId) {
+                this.houseOwnerId = houseOwnerId;
             }
 
             public String getLockType() {

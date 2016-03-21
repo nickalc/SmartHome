@@ -102,7 +102,7 @@ public class TradeListResult {
             private String roomNo;
             private String orderStatus;
             private String houseAdress;
-            private int totalPrice;
+            private String totalPrice;
             /**
              * startTime : 8:00
              * checkInDate : 2016-01-18
@@ -145,7 +145,7 @@ public class TradeListResult {
                 this.houseAdress = houseAdress;
             }
 
-            public void setTotalPrice(int totalPrice) {
+            public void setTotalPrice(String totalPrice) {
                 this.totalPrice = totalPrice;
             }
 
@@ -185,7 +185,7 @@ public class TradeListResult {
                 return houseAdress;
             }
 
-            public int getTotalPrice() {
+            public String getTotalPrice() {
                 return totalPrice;
             }
 

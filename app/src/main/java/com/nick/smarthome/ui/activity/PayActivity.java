@@ -242,7 +242,7 @@ public class PayActivity extends BaseSwipeBackActivity implements View.OnClickLi
                         public void onError(Request request, Exception e) {
                             TLog.error(e.toString());
                             UIHelper.showToast(mContext, "接口异常...");
-                            waitDialog.hide();
+                            waitDialog.dismiss();
                         }
 
                         @Override
@@ -256,7 +256,7 @@ public class PayActivity extends BaseSwipeBackActivity implements View.OnClickLi
 
                                     houseTitle = orderInfo.getHouseTitle();
                                     houseAddr = orderInfo.getHouseAdress();
-                                    housePrice = String.valueOf(orderInfo.getTotalPrice());
+                                    housePrice = orderInfo.getTotalPrice();
                                     orderCode = orderInfo.getOrderCode();
                                     roomNo = orderInfo.getRoomNo();
                                     roomType = orderInfo.getRoomType();
@@ -298,7 +298,7 @@ public class PayActivity extends BaseSwipeBackActivity implements View.OnClickLi
                             } else {
                                 UIHelper.showToast(mContext, response.getMessage());
                             }
-                            waitDialog.hide();
+                            waitDialog.dismiss();
                         }
                     });
         } else {
@@ -486,12 +486,12 @@ public class PayActivity extends BaseSwipeBackActivity implements View.OnClickLi
                     @Override
                     public void onError(Request request, Exception e) {
                         UIHelper.showToast(mContext, "提交信息出错");
-                        waitDialog.hide();
+                        waitDialog.dismiss();
                     }
 
                     @Override
                     public void onResponse(CommResult response) {
-                        waitDialog.hide();
+                        waitDialog.dismiss();
                         if (response.statuscode.equals("1")) {
                             UIHelper.showToast(mContext, response.message);
                             setResult(Activity.RESULT_OK);

@@ -300,7 +300,7 @@ public class LockInfoActivity extends BaseSwipeBackActivity implements View.OnCl
         });
 
         wheelNoBusinessPicker.setPadding(padding, 2, padding, 2);
-        wheelNoBusinessPicker.setTextSize(60);
+        wheelNoBusinessPicker.setTextSize(textSize);
         wheelNoBusinessPicker.setItemSpace(itemSpace);
         wheelNoBusinessPicker.setTextColor(getResources().getColor(R.color.main_toolbar_color));
         wheelNoBusinessPicker.setCurrentTextColor(getResources().getColor(R.color.main_toolbar_color));

@@ -134,6 +134,9 @@ public class AddLockListActicity extends BaseSwipeBackActivity implements SwipeR
                 getResources().getColor(R.color.gplus_color_4));
         mSwipeRefreshLayout.setOnRefreshListener(this);
 
+        mAdapter = new AddLockedRecyclerAdapter(mContext, mLockListItems);
+        mRecyclerView.setAdapter(mAdapter);
+
         getNewsList(mAdapter, 1);
 
         //监听list滑动事件
@@ -199,12 +202,18 @@ public class AddLockListActicity extends BaseSwipeBackActivity implements SwipeR
 
                                 int totalCnt = response.getData().getTotalCnt();
                                 if (totalCnt > 0) {
-                                    mLockListItems = response.getData().getList();
-                                    pageNumber = currentPage;
-                                    mAdapter = new AddLockedRecyclerAdapter(mContext, mLockListItems);
-                                    mRecyclerView.setAdapter(mAdapter);
-                                    mAdapter.notifyDataSetChanged();
-                                    mSwipeRefreshLayout.setRefreshing(false);
+                                    if(response.getData().getList().size() > 0) {
+                                        //  mLockListItems = response.getData().getList();
+                                        pageNumber = currentPage;
+//                                    mAdapter = new AddLockedRecyclerAdapter(mContext, mLockListItems);
+//                                    mRecyclerView.setAdapter(mAdapter);
+//                                    mAdapter.notifyDataSetChanged();
+                                        mLockListItems.addAll(response.getData().getList());
+                                        mAdapter.notifyDataSetChanged();
+                                        mSwipeRefreshLayout.setRefreshing(false);
+                                    }else {
+                                        UIHelper.showToast(mContext, "没有更多数据");
+                                    }
                                 } else{
                                     toggleShowEmpty(true, "没有查询到数据", new View.OnClickListener() {
                                         @Override

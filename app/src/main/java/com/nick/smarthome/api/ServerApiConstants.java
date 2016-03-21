@@ -24,10 +24,14 @@ public class ServerApiConstants {
         public static final String LOGIN_IN_URLS = URL_API_HOST + "/customerRegisterServer/customerLand";
         //获取验证码
         public static final String GET_VALID_CODE_URLS = URL_API_HOST + "/customerRegisterServer/getPhoneNumberValidationCode";
+        //忘记密码获取验证码
+        public static final String GET_FORGOT_VALID_CODE_URLS = URL_API_HOST + "/customerRegisterServer/getPhoneNumberValidationCodeNew";
         //验证手机验证码
         public static final String VALIDATION_PHONE_CODE_URLS = URL_API_HOST + "/customerRegisterServer/customerRegisterValidation";
         //注册
         public static final String SUBMIT_REGISTER_URLS = URL_API_HOST + "/customerRegisterServer/customerRegister";
+        //重置/忘记密码
+        public static final String SUBMIT_RESET_PSD_URLS = URL_API_HOST + "/customerRegisterServer/updateCustomerPassword";
         //客户图片(头像)上传
         public static final String SUBMIT_CUSTOMER_PIC_URLS = URL_API_HOST + "/customerInfoServer/submitCustomerPic";
         //个人信息查询

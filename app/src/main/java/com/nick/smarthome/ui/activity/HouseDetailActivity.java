@@ -139,11 +139,12 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
 
     private List<HashMap<String, Object>> optionalDateList = new ArrayList<HashMap<String, Object>>();
 
-    private String mCustomerId;
+    private String mCustomerId,houseOwnerId;
 
-    private int totalPrice = 0;
+    private String totalPrice = "";
 
     private int[] A;
+    private int[] X;
 
     private LayoutInflater inflater;
     private View item;
@@ -183,6 +184,9 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
     @Override
     protected void initViewsAndEvents() {
 
+        SharedPreferences settings = getSharedPreferences("secrecy", Activity.MODE_PRIVATE);
+        mCustomerId = settings.getString("customerId", null);
+
         waitDialog = DialogHelp.getWaitDialog(this, "正在加载数据...");
         mDialog = DialogHelp.getWaitDialog(this, "正在提交数据...");
 
@@ -203,9 +207,9 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
 
         initDatas();
 
-        doOrderBtn.setBackgroundColor(getResources().getColor(R.color.light_gray));
-        doOrderBtn.setText("最低4小时");
-        doOrderBtn.setClickable(false);
+//        doOrderBtn.setBackgroundColor(getResources().getColor(R.color.light_gray));
+//        doOrderBtn.setText("最低4小时");
+//        doOrderBtn.setClickable(false);
 
         //    getDate();
         //   getTimePriceDate();
@@ -605,7 +609,7 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
                 }
             }
         }
-        totalPrice = housePrice;
+        totalPrice = String.valueOf(housePrice);
         tvHousePrice.setText(housePrice + "元");
     }
 
@@ -619,7 +623,7 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
 
         int timesLen = allTimeItems.size();
 
-        int[] X = new int[51];
+        X = new int[51];
         X[0] = 0;
         X[50] = 0;
         for (int i = 0; i < timesLen; i++) {
@@ -679,18 +683,23 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
             }
         }
 
-        if (count >=2) {
-            doOrderBtn.setBackgroundColor(getResources().getColor(R.color.main_toolbar_color));
-            doOrderBtn.setText("我要下单");
-            doOrderBtn.setClickable(true);
+        if (houseOwnerId.equals(mCustomerId)) {
+            totalPrice = "0.1";
+            tvHousePrice.setText(0.1 + "元");
         }else {
-            doOrderBtn.setBackgroundColor(getResources().getColor(R.color.light_gray));
-            doOrderBtn.setText("最低4小时");
-            doOrderBtn.setClickable(false);
-        }
+            if(isHasBook()){//if (count >= 2) {
+                doOrderBtn.setBackgroundColor(getResources().getColor(R.color.main_toolbar_color));
+                doOrderBtn.setText("我要下单");
+                doOrderBtn.setClickable(true);
+            } else {
+                doOrderBtn.setBackgroundColor(getResources().getColor(R.color.light_gray));
+                doOrderBtn.setText("最低4小时");
+                doOrderBtn.setClickable(false);
+            }
 
-        totalPrice = Psum;
-        tvHousePrice.setText(Psum + "元");
+            totalPrice = String.valueOf(Psum);
+            tvHousePrice.setText(Psum + "元");
+        }
 
     }
 
@@ -748,7 +757,7 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
                 .execute(new HouseResourceDetailCallback() {
                     @Override
                     public void onError(Request request, Exception e) {
-                        waitDialog.hide();
+                        waitDialog.dismiss();
                     }
 
                     @Override
@@ -762,6 +771,13 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
                             tvHouseTitle.setText(rnRoomInfoMapEntity.getHouseTitle());
                             tvHouseAddr.setText(rnRoomInfoMapEntity.getHouseAdress());
                             tvRoomNo.setText(rnRoomInfoMapEntity.getDoorNo());
+                            houseOwnerId = rnRoomInfoMapEntity.getHouseOwnerId();
+                            if (!houseOwnerId.equals(mCustomerId)) {
+                                doOrderBtn.setBackgroundColor(getResources().getColor(R.color.light_gray));
+                                doOrderBtn.setText("最低4小时");
+                                doOrderBtn.setClickable(false);
+                            }
+                          // UIHelper.showToast(HouseDetailActivity.this,"房东id"+houseOwnerId);
                             if ("ROOM".equals(rnRoomInfoMapEntity.getLockType())) {
                                 roomType.setText("房间");
                             }else{
@@ -836,7 +852,7 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
                         } else {
                             UIHelper.showToast(mContext, response.getMessage());
                         }
-                        waitDialog.hide();
+                        waitDialog.dismiss();
                     }
                 });
     }
@@ -975,12 +991,51 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
     }
 
 
+    private boolean isHasBook(){
+        int currentItem = 0;
+        int lastItem = 0;
+        int nextItem = 0;
+        boolean isNeed = false;
+       // for(int item : X){
+
+        for (int i = 0; i < X.length; i++) {
+
+            currentItem = X[i];
+            if (i < 50) {
+                nextItem = X[i+1];
+            }else {
+                nextItem = 0;
+            }
+           // nextItem = X[i+1];
+//            if (currentItem == lastItem && currentItem == 1) {
+//                return true;
+//            }
+            if (currentItem == 1 && (lastItem == 1 || nextItem ==1)) {
+                isNeed = true;
+            }else if(currentItem == 1 && lastItem != 1 && nextItem != 1){
+                if(i>6 && i%7==0){
+                    isNeed = true;
+                    return true;
+                }else {
+                    isNeed = false;
+                    return false;
+                }
+            }
+            lastItem = currentItem;
+        }
+        if (isNeed) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
     private void submitOrder() {
 
         mDialog.show();
 
-        SharedPreferences settings = getSharedPreferences("secrecy", Activity.MODE_PRIVATE);
-        mCustomerId = settings.getString("customerId", null);
+//        SharedPreferences settings = getSharedPreferences("secrecy", Activity.MODE_PRIVATE);
+//        mCustomerId = settings.getString("customerId", null);
 
         String url = ServerApiConstants.Urls.ADD_CUST_ORDER_URLS;
 
@@ -1050,13 +1105,13 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
         @Override
         public void onError(Request request, Exception e) {
             UIHelper.showToast(mContext, "提交信息出错");
-            mDialog.hide();
+            mDialog.dismiss();
         }
 
         @Override
         public void onResponse(String response) {
 
-            mDialog.hide();
+            mDialog.dismiss();
 
             try {
                 JSONObject jsonObject = new JSONObject(response);
