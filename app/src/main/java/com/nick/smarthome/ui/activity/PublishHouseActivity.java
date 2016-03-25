@@ -6,13 +6,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Location;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationListener;
 import com.amap.api.location.LocationManagerProxy;
@@ -91,6 +92,19 @@ public class PublishHouseActivity extends BaseSwipeBackActivity implements View.
 
     ProgressDialog mDialog;
 
+    Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+           switch (msg.what){
+               case 1:
+                   if (CommonUtils.isEmpty(tvAddr.getText().toString())) {
+                     tvAddr.setText(msg.obj.toString());
+                   }
+                   break;
+           }
+        }
+    };
+
 
     @Override
     protected int getActionBarTitle() {
@@ -150,7 +164,7 @@ public class PublishHouseActivity extends BaseSwipeBackActivity implements View.
         // 其中如果间隔时间为-1，则定位只定一次,
         //在单次定位情况下，定位无论成功与否，都无需调用removeUpdates()方法移除请求，定位sdk内部会移除
         mLocationManagerProxy.requestLocationData(
-                LocationProviderProxy.AMapNetwork, -1, 15, this);
+                LocationProviderProxy.AMapNetwork, 15000, 15, this);
     }
 
 
@@ -324,8 +338,8 @@ public class PublishHouseActivity extends BaseSwipeBackActivity implements View.
             String addr = amapLocation.getAddress();
             addr = addr.replaceAll(amapLocation.getProvince(), "");
 //            addr = addr.replaceAll(amapLocation.getCity(), "");
-            tvAddr.setText(addr);
-
+//            tvAddr.setText(addr);
+            handler.sendMessage(handler.obtainMessage(1, addr));
 
             SharedPreferences sharedPreferences = getSharedPreferences(
                     "secrecy", Activity.MODE_PRIVATE);

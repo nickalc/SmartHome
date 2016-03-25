@@ -49,6 +49,7 @@ import com.nick.smarthome.ui.adapter.NoBusinessDateRecyclerAdapter;
 import com.nick.smarthome.ui.adapter.PhotoAdapter;
 import com.nick.smarthome.ui.base.BaseSwipeBackActivity;
 import com.nick.smarthome.utils.DialogHelp;
+import com.nick.smarthome.utils.ImageUtils;
 import com.nick.smarthome.utils.UIHelper;
 import com.nick.smarthome.widgets.MyLinearLayoutManager;
 import com.nick.smarthome.widgets.wheelpicker.core.AbstractWheelPicker;
@@ -762,6 +763,7 @@ public class LockInfoActivity extends BaseSwipeBackActivity implements View.OnCl
 
         waitDialog.show();
 
+
         if (mSelectPath.size() == 1) {
 
             OkHttpUtils.post()
@@ -1049,6 +1051,10 @@ public class LockInfoActivity extends BaseSwipeBackActivity implements View.OnCl
                 selectedPhotos.clear();
 
                 if (mSelectPath != null) {
+                    for (int i = 0; i < mSelectPath.size(); i++) {
+                        String path = ImageUtils.compressImage(mSelectPath.get(i));
+                        mSelectPath.set(i,path);
+                    }
                     isModifyImg = true;
                     selectedPhotos.addAll(mSelectPath);
                 }

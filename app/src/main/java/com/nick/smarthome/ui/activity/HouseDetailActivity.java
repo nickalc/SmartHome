@@ -676,12 +676,12 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
         for (int i = 0; i < P.length; i++)
             Psum += P[i];
 
-        int count = 0;
-        for(int item : X){
-            if(item == 1){
-                count ++;
-            }
-        }
+//        int count = 0;
+//        for(int item : X){
+//            if(item == 1){
+//                count ++;
+//            }
+//        }
 
         if (houseOwnerId.equals(mCustomerId)) {
             totalPrice = "0.1";

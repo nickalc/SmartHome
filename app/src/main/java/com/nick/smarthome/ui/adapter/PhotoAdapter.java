@@ -50,6 +50,8 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
                     .placeholder(me.nereo.multi_image_selector.R.drawable.default_error)
                     .into(holder.ivPhoto);
         } else {
+//            String path = ImageUtils.compressImage(photoPaths.get(position));
+//            photoPaths.set(position,path);
             Uri uri = Uri.fromFile(new File(photoPaths.get(position)));
             Picasso.with(mContext)
                     .load(uri)
@@ -78,6 +80,7 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
     public int getItemCount() {
         return photoPaths.size();
     }
+
 
 
     public static class PhotoViewHolder extends RecyclerView.ViewHolder {

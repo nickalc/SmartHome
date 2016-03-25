@@ -34,6 +34,19 @@
                     android:background="@color/white"/>
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_margin="@dimen/space_5"
+                    android:background="@drawable/textview_light_gray_bg"
+                    android:padding="5dip"
+                    android:text="前台出示身份证"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/text_size_12"
+                    android:visibility="visible" />
+
+                <TextView
                     android:id="@+id/indicator_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -45,7 +58,7 @@
                     android:paddingRight="10dip"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size_12"
-                    android:visibility="gone" />
+                    android:visibility="visible" />
             </RelativeLayout>
 
 
