@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+
 /**
  * Created by nick on 15/10/26.
  */
@@ -72,6 +73,7 @@ public class ViewHolder {
     public ImageView getImageView(int id) {
         return get(id);
     }
+
 
     public void setTextView(int  id,CharSequence charSequence){
         getTextView(id).setText(charSequence);

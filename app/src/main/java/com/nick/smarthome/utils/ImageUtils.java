@@ -773,8 +773,8 @@ public class ImageUtils {
         int actualHeight = options.outHeight;
         int actualWidth = options.outWidth;
 
-        float maxHeight = 816.0f;
-        float maxWidth = 612.0f;
+        float maxHeight = 1024.0f;
+        float maxWidth = 768.0f;
         float imgRatio = actualWidth / actualHeight;
         float maxRatio = maxWidth / maxHeight;
 

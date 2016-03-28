@@ -99,19 +99,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.nick.smarthome.widgets.PLALoadMoreListView
-            android:id="@+id/fragment_house_list_view"
+        <!--<com.nick.smarthome.widgets.PLALoadMoreListView-->
+            <!--android:id="@+id/fragment_house_list_view"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:cacheColorHint="@android:color/transparent"-->
+            <!--android:divider="@null"-->
+            <!--android:dividerHeight="5dp"-->
+            <!--android:fadingEdge="none"-->
+            <!--android:fadingEdgeLength="0dp"-->
+            <!--android:listSelector="@android:color/transparent"-->
+            <!--android:overScrollMode="never"-->
+            <!--android:scrollbars="vertical"-->
+            <!--app:plaColumnNumber="3" />-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:cacheColorHint="@android:color/transparent"
-            android:divider="@null"
-            android:dividerHeight="5dp"
-            android:fadingEdge="none"
-            android:fadingEdgeLength="0dp"
-            android:listSelector="@android:color/transparent"
-            android:overScrollMode="never"
-            android:scrollbars="vertical"
-            app:plaColumnNumber="3" />
+            android:layout_height="match_parent"
+            android:background="#ffffff" />
     </com.github.obsessive.library.widgets.XSwipeRefreshLayout>
 
 </LinearLayout>

@@ -47,7 +47,7 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
         if (photoPaths.get(position).contains("http")) {
             Picasso.with(mContext)
                     .load(photoPaths.get(position))
-                    .placeholder(me.nereo.multi_image_selector.R.drawable.default_error)
+                    .placeholder(R.drawable.ic_loading)
                     .into(holder.ivPhoto);
         } else {
 //            String path = ImageUtils.compressImage(photoPaths.get(position));
@@ -55,7 +55,9 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
             Uri uri = Uri.fromFile(new File(photoPaths.get(position)));
             Picasso.with(mContext)
                     .load(uri)
-                    .placeholder(me.nereo.multi_image_selector.R.drawable.default_error)
+                    .placeholder(R.drawable.ic_loading)
+                    .error(R.drawable.ic_loading_error)
+                    .tag(mContext)
                     .into(holder.ivPhoto);
         }
 

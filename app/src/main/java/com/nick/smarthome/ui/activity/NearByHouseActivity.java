@@ -3,34 +3,27 @@ package com.nick.smarthome.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.view.LayoutInflater;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
 import com.android.okhttp.OkHttpUtils;
-import com.github.obsessive.library.adapter.ListViewDataAdapter;
-import com.github.obsessive.library.adapter.ViewHolderBase;
-import com.github.obsessive.library.adapter.ViewHolderCreator;
 import com.github.obsessive.library.eventbus.EventCenter;
 import com.github.obsessive.library.netstatus.NetUtils;
-import com.github.obsessive.library.pla.PLAAdapterView;
-import com.github.obsessive.library.pla.PLAImageView;
-import com.github.obsessive.library.utils.CommonUtils;
 import com.github.obsessive.library.widgets.XSwipeRefreshLayout;
 import com.nick.smarthome.R;
 import com.nick.smarthome.api.ServerApiConstants;
 import com.nick.smarthome.bean.NearByHouseEntity;
 import com.nick.smarthome.bean.NearByHouseListResult;
 import com.nick.smarthome.callback.NearByHouseListCallback;
+import com.nick.smarthome.ui.adapter.HouseResRecyclerAdapter;
 import com.nick.smarthome.ui.base.BaseSwipeBackActivity;
+import com.nick.smarthome.ui.base.RecyclerItemClickListener;
 import com.nick.smarthome.utils.TLog;
 import com.nick.smarthome.utils.UIHelper;
-import com.nick.smarthome.widgets.PLALoadMoreListView;
-import com.nostra13.universalimageloader.core.ImageLoader;
 import com.squareup.okhttp.Request;
 
 import java.util.ArrayList;
@@ -38,7 +31,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
@@ -48,15 +40,14 @@ import butterknife.OnClick;
  * Date:    15/12/29 16:47.
  * Description:
  */
-public class NearByHouseActivity extends BaseSwipeBackActivity implements PLALoadMoreListView.OnLoadMoreListener,
-        PLAAdapterView.OnItemClickListener, SwipeRefreshLayout.OnRefreshListener , View.OnClickListener{
+public class NearByHouseActivity extends BaseSwipeBackActivity implements SwipeRefreshLayout.OnRefreshListener , View.OnClickListener{
 
 
     @InjectView(R.id.fragment_images_list_swipe_layout)
     XSwipeRefreshLayout mSwipeRefreshLayout;
 
-    @InjectView(R.id.fragment_house_list_view)
-    PLALoadMoreListView mListView;
+    @InjectView(R.id.recycler_view)
+    RecyclerView mRecyclerView;
 
     @InjectView(R.id.radiogroup)
     RadioGroup mRadioGroup;
@@ -73,15 +64,15 @@ public class NearByHouseActivity extends BaseSwipeBackActivity implements PLALoa
     @InjectView(R.id.dis_sort_img)
     ImageView disSortImg;
 
-    /**
-     * the page number
-     */
+    private StaggeredGridLayoutManager mLayoutManager;
+
     private int mCurrentPage = 1;
 
     private List<NearByHouseEntity> mListData = new ArrayList<NearByHouseEntity>();
     ;
 
-    private ListViewDataAdapter<NearByHouseEntity> mListViewAdapter = null;
+   // private ListViewDataAdapter<NearByHouseEntity> mListViewAdapter = null;
+    HouseResRecyclerAdapter mAdapter;
 
     private double latitude, longitude;
 
@@ -90,7 +81,11 @@ public class NearByHouseActivity extends BaseSwipeBackActivity implements PLALoa
 
     private String distanceSort = "";
     private String priceSort = "0";
-    public int screenWidth,screenHeight;
+   // public int screenWidth,screenHeight;
+    private int retTotalCnt;
+
+    private boolean isLoadingMore;
+    private boolean canLoadMore = true;
 
     @Override
     protected int getActionBarTitle() {
@@ -126,58 +121,7 @@ public class NearByHouseActivity extends BaseSwipeBackActivity implements PLALoa
     @Override
     protected void initViewsAndEvents() {
 
-        WindowManager wm = getWindowManager();
-
-        screenWidth = wm.getDefaultDisplay().getWidth();
-        screenHeight = wm.getDefaultDisplay().getHeight();
-
         showLoading(mContext.getString(R.string.common_loading_message));
-
-        mListViewAdapter = new ListViewDataAdapter<NearByHouseEntity>(new ViewHolderCreator<NearByHouseEntity>() {
-            @Override
-            public ViewHolderBase<NearByHouseEntity> createViewHolder(int position) {
-                return new ViewHolderBase<NearByHouseEntity>() {
-
-                    PLAImageView mItemImage;
-                    TextView mHouseName;
-                    TextView mDistance;
-
-                    @Override
-                    public View createView(LayoutInflater layoutInflater) {
-                        View convertView = layoutInflater.inflate(R.layout.list_item_house_list, null);
-                        mItemImage = ButterKnife.findById(convertView, R.id.list_item_house_list_image);
-                        mHouseName = ButterKnife.findById(convertView, R.id.list_item_house_name);
-                        mDistance = ButterKnife.findById(convertView, R.id.list_item_house_distance);
-
-                        return convertView;
-                    }
-
-                    @Override
-                    public void showData(int position, NearByHouseEntity itemData) {
-
-                        String imageUrl = itemData.getPhotoUrl();
-                        String houseName = itemData.getHouseTitle();
-                        String distance = trans(itemData.getHouseDistance());//String.valueOf(itemData.getHouseDistance()) + "米";
-
-                        if (!CommonUtils.isEmpty(imageUrl)) {
-                            ImageLoader.getInstance().displayImage(imageUrl, mItemImage);
-                        }
-                        mHouseName.setText(houseName);
-                        mDistance.setText(distance);
-
-                        mItemImage.setImageWidth(screenWidth / 3);
-                        mItemImage.setImageHeight(screenWidth / 3);
-                    }
-                };
-            }
-        });
-
-        mListView.setOnItemClickListener(this);
-        mListView.setOnLoadMoreListener(this);
-        mListViewAdapter.getDataList().addAll(mListData);
-        mListView.setAdapter(mListViewAdapter);
-
-        getData(mCurrentPage, distanceSort, priceSort);
 
         mSwipeRefreshLayout.setColorSchemeColors(
                 getResources().getColor(R.color.gplus_color_1),
@@ -185,6 +129,36 @@ public class NearByHouseActivity extends BaseSwipeBackActivity implements PLALoa
                 getResources().getColor(R.color.gplus_color_3),
                 getResources().getColor(R.color.gplus_color_4));
         mSwipeRefreshLayout.setOnRefreshListener(this);
+
+        mLayoutManager = new StaggeredGridLayoutManager(3,
+                StaggeredGridLayoutManager.VERTICAL);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (canLoadMore)
+                    NearByHouseActivity.this.onScrolled(recyclerView, dx, dy);
+            }
+        });
+
+        mRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+
+                        Intent intent = new Intent(mContext, HouseDetailActivity.class);
+                        intent.putExtra("roomId", mListData.get(position).getRoomId());
+                        intent.putExtra("longitude",String.valueOf(longitude));
+                        intent.putExtra("latitude",String.valueOf(latitude));
+                        startActivity(intent);
+                    }
+                })
+        );
+
+        mAdapter = new HouseResRecyclerAdapter(mContext, mListData);
+        mRecyclerView.setAdapter(mAdapter);
+
+        getData(mCurrentPage, distanceSort, priceSort);
     }
 
 
@@ -219,14 +193,34 @@ public class NearByHouseActivity extends BaseSwipeBackActivity implements PLALoa
                             hideLoading();
 
                             if (response.getStatuscode().equals("1")) {
-                                int totalCnt = response.getData().getTotalCnt();
-                                if (totalCnt > 0) {
-                                    mListData = response.getData().getList();
-                                    mListViewAdapter.getDataList().addAll(mListData);
-                                    mListViewAdapter.notifyDataSetChanged();
-                                    if (totalCnt < currentPage * 15) {
-                                        mListView.setCanLoadMore(false);
+                                retTotalCnt = response.getData().getTotalCnt();
+                                if (retTotalCnt > 0) {
+//                                    if (response.getData().getList() != null && response.getData().getList().size()>0) {
+//                                        mListData.addAll(response.getData().getList()) ;//= response.getData().getList();
+//                                        mListViewAdapter.getDataList().addAll(mListData);
+//                                        mListViewAdapter.notifyDataSetChanged();
+//                                    }
+//                                    if (retTotalCnt < currentPage * 15) {
+//                                        mListView.setCanLoadMore(false);
+//                                    }else {
+//                                        mListView.setCanLoadMore(true);
+//                                    }
+
+                                    if (response.getData().getList().size() > 0) {
+                                       // pageNumber = currentPage;
+                                        mListData.addAll(response.getData().getList());
+                                        mAdapter.notifyDataSetChanged();
+                                        mSwipeRefreshLayout.setRefreshing(false);
+
+                                    }else {
+                                        UIHelper.showToast(mContext, "没有更多数据");
                                     }
+                                    if (retTotalCnt < currentPage * 15) {
+                                        canLoadMore = false;
+                                    }else {
+                                        canLoadMore =true;
+                                    }
+                                    isLoadingMore = false;
                                 } else {
                                     UIHelper.showToast(mContext, "没有查询到数据");
                                 }
@@ -247,45 +241,77 @@ public class NearByHouseActivity extends BaseSwipeBackActivity implements PLALoa
     }
 
 
-    @Override
-    public void onItemClick(PLAAdapterView<?> parent, View view, int position, long id) {
-        if (null != mListViewAdapter) {
-            if (position >= 0 && position < mListViewAdapter.getDataList().size()) {
-                Intent intent = new Intent(mContext, HouseDetailActivity.class);
-                intent.putExtra("roomId", mListData.get(position).getRoomId());
-                startActivity(intent);
-            }
-        }
-    }
+//    @Override
+//    public void onItemClick(PLAAdapterView<?> parent, View view, int position, long id) {
+//        if (null != mListViewAdapter) {
+//            if (position >= 0 && position < mListViewAdapter.getDataList().size()) {
+//                Intent intent = new Intent(mContext, HouseDetailActivity.class);
+//                intent.putExtra("roomId", mListData.get(position).getRoomId());
+//                startActivity(intent);
+//            }
+//        }
+//    }
 
-    @Override
-    public void onLoadMore() {
-        if (null != mListView) {
-            mListView.onLoadMoreComplete();
-        }
-
-        if (null != mListViewAdapter) {
-            mCurrentPage++;
-            getData(mCurrentPage, distanceSort, priceSort);
-        }
-
-        mListView.setCanLoadMore(true);
-    }
+//    @Override
+//    public void onLoadMore() {
+//        if (null != mListView) {
+//            mListView.onLoadMoreComplete();
+//        }
+//
+//      //  if (null != mListViewAdapter) {
+//            mCurrentPage++;
+//            getData(mCurrentPage, distanceSort, priceSort);
+//     //   }
+//
+//     //   mListView.setCanLoadMore(true);
+//    }
+//
+//    @Override
+//    public void onRefresh() {
+//        if (null != mSwipeRefreshLayout) {
+//            mSwipeRefreshLayout.setRefreshing(false);
+//        }
+//        mListData.clear();
+//        mListViewAdapter.getDataList().clear();
+////        mListViewAdapter.getDataList().addAll(mListData);
+////        mListViewAdapter.notifyDataSetChanged();
+//        mCurrentPage = 1;
+//        distanceSort = "";
+//        priceSort = "0";
+//        getData(mCurrentPage, distanceSort, priceSort);
+//
+//        mListView.setCanLoadMore(true);
+//
+//    }
 
     @Override
     public void onRefresh() {
         if (null != mSwipeRefreshLayout) {
             mSwipeRefreshLayout.setRefreshing(false);
         }
-        mListViewAdapter.getDataList().clear();
-//        mListViewAdapter.getDataList().addAll(mListData);
-//        mListViewAdapter.notifyDataSetChanged();
+
+        mListData.clear();
+
+        mAdapter.notifyDataSetChanged();
+
         mCurrentPage = 1;
         distanceSort = "";
         priceSort = "0";
         getData(mCurrentPage, distanceSort, priceSort);
+    }
 
-        mListView.setCanLoadMore(true);
+    public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+        int[] visibleItem = mLayoutManager.findLastVisibleItemPositions(null);
+        int totalItemCount = mLayoutManager.getItemCount();
+        //lastVisibleItem >= totalItemCount - 2 表示剩下2个item自动加载，各位自由选择
+        // dy>0 表示向下滑动
+        int lastitem = Math.max(visibleItem[0], visibleItem[1]);
+
+        if (!isLoadingMore && lastitem >= totalItemCount - 4 && dy > 0) {
+            isLoadingMore = true;
+            mCurrentPage++;
+            getData(mCurrentPage, distanceSort, priceSort);
+        }
 
     }
 
@@ -337,7 +363,8 @@ public class NearByHouseActivity extends BaseSwipeBackActivity implements PLALoa
         switch (v.getId()){
             case R.id.distance_btn:
                 mSwipeRefreshLayout.setRefreshing(true);
-                mListViewAdapter.getDataList().clear();
+             //   mListViewAdapter.getDataList().clear();
+                mListData.clear();
                 mCurrentPage = 1;
                 if(distanceOrder == 1) {
                     priceSortImg.setVisibility(View.GONE);
@@ -360,7 +387,8 @@ public class NearByHouseActivity extends BaseSwipeBackActivity implements PLALoa
                 break;
             case R.id.price_btn:
                 mSwipeRefreshLayout.setRefreshing(true);
-                mListViewAdapter.getDataList().clear();
+             //   mListViewAdapter.getDataList().clear();
+                mListData.clear();
                 mCurrentPage = 1;
                 if (order == 1) {
                     priceSortImg.setVisibility(View.VISIBLE);

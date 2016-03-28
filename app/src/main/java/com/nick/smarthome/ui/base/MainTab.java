@@ -3,13 +3,13 @@ package com.nick.smarthome.ui.base;
 
 import com.nick.smarthome.R;
 import com.nick.smarthome.ui.fragment.MyInformationFragment;
-import com.nick.smarthome.ui.fragment.NearbyTestFragment;
+import com.nick.smarthome.ui.fragment.NearbyFragment;
 import com.nick.smarthome.ui.fragment.SearchFragment;
 
 public enum MainTab {
 
 	NEARBY(0, R.string.main_tab_name_nearby, R.drawable.tab_icon_nearby,
-			NearbyTestFragment.class),
+			NearbyFragment.class),
 
 	SEARCH(1, R.string.main_tab_name_search, R.drawable.tab_icon_search,
 			SearchFragment.class),

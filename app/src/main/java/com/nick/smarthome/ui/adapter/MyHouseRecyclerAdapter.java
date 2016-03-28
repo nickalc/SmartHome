@@ -45,6 +45,14 @@ public class MyHouseRecyclerAdapter extends AutoRVAdapter{
 
         if (!CommonUtils.isEmpty(item.getPhotoUrl())) {
             ImageLoader.getInstance().displayImage(item.getPhotoUrl(), holder.getImageView(R.id.houseImageView));
+//            Picasso.with(context)
+//                    .load(item.getPhotoUrl())
+//                    .placeholder(R.drawable.ic_loading)
+//                    .error(R.drawable.ic_loading_error)
+//                    .resize(DensityUtils.dip2px(context, 250), DensityUtils.dip2px(context, 250))
+//                    .centerCrop()
+//                    .tag(context)
+//                    .into(holder.getImageView(R.id.houseImageView));
         }
 
         if (item.isSelected()) {

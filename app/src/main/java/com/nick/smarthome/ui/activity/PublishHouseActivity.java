@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationListener;
 import com.amap.api.location.LocationManagerProxy;
@@ -368,5 +369,11 @@ public class PublishHouseActivity extends BaseSwipeBackActivity implements View.
     @Override
     public void onProviderDisabled(String provider) {
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        mLocationManagerProxy.destroy();
+        super.onDestroy();
     }
 }

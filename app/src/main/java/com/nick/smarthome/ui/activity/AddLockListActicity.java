@@ -362,6 +362,13 @@ public class AddLockListActicity extends BaseSwipeBackActivity implements SwipeR
                 holder.getTextView(R.id.room_type).setText("客厅");
             }
             holder.getTextView(R.id.tv_room_no).setText(item.getDoorNo());
+
+            if (item.isSelected()) {
+                holder.getCheckBox(R.id.ckeckbox_lock).setChecked(true);
+            }else {
+                holder.getCheckBox(R.id.ckeckbox_lock).setChecked(false);
+            }
+
             holder.getCheckBox(R.id.ckeckbox_lock).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

@@ -38,8 +38,8 @@ import com.nick.smarthome.utils.UIHelper;
 import com.nick.smarthome.widgets.FullyLinearLayoutManager;
 import com.nick.smarthome.widgets.MyLinearLayoutManager;
 import com.nick.smarthome.widgets.MyScrollView;
-import com.nostra13.universalimageloader.core.ImageLoader;
 import com.squareup.okhttp.Request;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -739,10 +739,19 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
     private void initDatas() {
 
         waitDialog.show();
-
         SharedPreferences settings = getSharedPreferences("secrecy", Activity.MODE_PRIVATE);
         String latitude = settings.getString("latitude", "");
         String longitude = settings.getString("longitude", "");
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            if (bundle.containsKey("latitude")) {
+                latitude = bundle.getString("latitude");
+            }
+            if (bundle.containsKey("longitude")) {
+                longitude = bundle.getString("longitude");
+            }
+        }
 
         String url = ServerApiConstants.Urls.GET_HOUSE_RESOURCE_DETAIL_INFO_URLS;
 
@@ -976,7 +985,15 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
 
             View view = mList.get(position);
             image = ((ImageView) view.findViewById(R.id.image));
-            ImageLoader.getInstance().displayImage(roomImgList.get(position).getImgPath(), image);
+          //  ImageLoader.getInstance().displayImage(roomImgList.get(position).getImgPath(), image);
+            Picasso.with(mContext)
+                    .load(roomImgList.get(position).getImgPath())
+                    .placeholder(R.drawable.ic_loading)
+                    .error(R.drawable.ic_loading_error)
+                   // .resize(DensityUtils.dip2px(mContext, 900), DensityUtils.dip2px(mContext, 450))
+                  //  .centerCrop()
+                    .tag(mContext)
+                    .into(image);
             image.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

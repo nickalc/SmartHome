@@ -57,9 +57,9 @@ public class ImageLoaderHelper {
 
     public DisplayImageOptions getDisplayOptions() {
         return new DisplayImageOptions.Builder()
-                .showImageOnLoading(R.color.default_image_background)
-                .showImageForEmptyUri(R.color.default_image_background)
-                .showImageOnFail(R.color.default_image_background)
+                .showImageOnLoading(R.drawable.ic_loading)
+                .showImageForEmptyUri(R.drawable.ic_loading_error)
+                .showImageOnFail(R.drawable.ic_loading_error)
                 .cacheInMemory(true)
                 .bitmapConfig(Bitmap.Config.RGB_565)
                 .imageScaleType(ImageScaleType.EXACTLY)
@@ -108,9 +108,9 @@ public class ImageLoaderHelper {
 
     public DisplayImageOptions getDisplayOptions(boolean isCacheOnDisk) {
         return new DisplayImageOptions.Builder()
-                .showImageOnLoading(R.color.default_image_background)
-                .showImageForEmptyUri(R.color.default_image_background)
-                .showImageOnFail(R.color.default_image_background)
+                .showImageOnLoading(R.drawable.ic_loading)
+                .showImageForEmptyUri(R.drawable.ic_loading_error)
+                .showImageOnFail(R.drawable.ic_loading_error)
                 .cacheInMemory(true)
                 .bitmapConfig(Bitmap.Config.RGB_565)
                 .imageScaleType(ImageScaleType.EXACTLY)
