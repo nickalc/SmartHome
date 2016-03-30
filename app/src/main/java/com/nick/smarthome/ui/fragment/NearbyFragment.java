@@ -212,9 +212,9 @@ public class NearbyFragment extends Fragment implements SwipeRefreshLayout.OnRef
                         public void onResponse(NearByHouseListResult response) {
                             toggleShowLoading(false, null);
                             if (response.getStatuscode().equals("1")) {
-                                int totalCnt = response.getData().getTotalCnt();
+                                retTotalCnt = response.getData().getTotalCnt();
                                 int totalPage = response.getData().getTotalPage();
-                                if (totalCnt > 0) {
+                                if (retTotalCnt > 0) {
                                     if (response.getData().getList().size() > 0) {
                                         // pageNumber = currentPage;
                                         mListData.addAll(response.getData().getList());
@@ -264,11 +264,11 @@ public class NearbyFragment extends Fragment implements SwipeRefreshLayout.OnRef
 
         mListData.clear();
 
-        mAdapter.notifyDataSetChanged();
+      //  mAdapter.notifyDataSetChanged();
 
         mCurrentPage = 1;
-        distanceSort = "";
-        priceSort = "0";
+//        distanceSort = "";
+//        priceSort = "0";
         getData(mCurrentPage, distanceSort, priceSort);
     }
 

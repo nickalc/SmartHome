@@ -9,20 +9,7 @@ import java.util.List;
  * Description:
  */
 public class NearByHouseListResult {
-
-
-    /**
-     * message : 信息查询成功！
-     * data : {"list":[{"houseTitle":"广州碧桂园","customerId":10007,"lockType":"HOUSE","address":"广州增城新塘","isHaveModify":1,"doorNo":"8","lockCode":"100000000011","photoUrl":"/abc.jpg","rnLockId":-7,"houseId":-2,"isBound":0}],"totalCnt":98,"totalPage":10}
-     * statuscode : 1
-     */
-
     private String message;
-    /**
-     * list : [{"houseTitle":"广州碧桂园","customerId":10007,"lockType":"HOUSE","address":"广州增城新塘","isHaveModify":1,"doorNo":"8","lockCode":"100000000011","photoUrl":"/abc.jpg","rnLockId":-7,"houseId":-2,"isBound":0}]
-     * totalCnt : 98
-     * totalPage : 10
-     */
 
     private DataEntity data;
     private String statuscode;
@@ -54,19 +41,6 @@ public class NearByHouseListResult {
     public static class DataEntity {
         private int totalCnt;
         private int totalPage;
-        /**
-         * houseTitle : 广州碧桂园
-         * customerId : 10007
-         * lockType : HOUSE
-         * address : 广州增城新塘
-         * isHaveModify : 1
-         * doorNo : 8
-         * lockCode : 100000000011
-         * photoUrl : /abc.jpg
-         * rnLockId : -7
-         * houseId : -2
-         * isBound : 0
-         */
 
         private List<NearByHouseEntity> list;
 

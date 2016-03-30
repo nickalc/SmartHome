@@ -139,7 +139,7 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
 
     private List<HashMap<String, Object>> optionalDateList = new ArrayList<HashMap<String, Object>>();
 
-    private String mCustomerId,houseOwnerId;
+    private String mCustomerId, houseOwnerId;
 
     private String totalPrice = "";
 
@@ -686,8 +686,8 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
         if (houseOwnerId.equals(mCustomerId)) {
             totalPrice = "0.1";
             tvHousePrice.setText(0.1 + "元");
-        }else {
-            if(isHasBook()){//if (count >= 2) {
+        } else {
+            if (isHasBook()) {//if (count >= 2) {
                 doOrderBtn.setBackgroundColor(getResources().getColor(R.color.main_toolbar_color));
                 doOrderBtn.setText("我要下单");
                 doOrderBtn.setClickable(true);
@@ -786,10 +786,10 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
                                 doOrderBtn.setText("最低4小时");
                                 doOrderBtn.setClickable(false);
                             }
-                          // UIHelper.showToast(HouseDetailActivity.this,"房东id"+houseOwnerId);
+                            // UIHelper.showToast(HouseDetailActivity.this,"房东id"+houseOwnerId);
                             if ("ROOM".equals(rnRoomInfoMapEntity.getLockType())) {
                                 roomType.setText("房间");
-                            }else{
+                            } else {
                                 roomType.setText("客厅");
                             }
 
@@ -985,13 +985,13 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
 
             View view = mList.get(position);
             image = ((ImageView) view.findViewById(R.id.image));
-          //  ImageLoader.getInstance().displayImage(roomImgList.get(position).getImgPath(), image);
+            //  ImageLoader.getInstance().displayImage(roomImgList.get(position).getImgPath(), image);
             Picasso.with(mContext)
                     .load(roomImgList.get(position).getImgPath())
                     .placeholder(R.drawable.ic_loading)
                     .error(R.drawable.ic_loading_error)
-                   // .resize(DensityUtils.dip2px(mContext, 900), DensityUtils.dip2px(mContext, 450))
-                  //  .centerCrop()
+                            // .resize(DensityUtils.dip2px(mContext, 900), DensityUtils.dip2px(mContext, 450))
+                            //  .centerCrop()
                     .tag(mContext)
                     .into(image);
             image.setOnClickListener(new View.OnClickListener() {
@@ -1008,41 +1008,40 @@ public class HouseDetailActivity extends BaseSwipeBackActivity implements View.O
     }
 
 
-    private boolean isHasBook(){
+    private boolean isHasBook() {
         int currentItem = 0;
         int lastItem = 0;
         int nextItem = 0;
-        boolean isNeed = false;
-       // for(int item : X){
+      //  boolean isNeed = false;
+        List<String> list = new ArrayList<String>();
 
         for (int i = 0; i < X.length; i++) {
 
             currentItem = X[i];
             if (i < 50) {
-                nextItem = X[i+1];
-            }else {
+                nextItem = X[i + 1];
+            } else {
                 nextItem = 0;
             }
-           // nextItem = X[i+1];
-//            if (currentItem == lastItem && currentItem == 1) {
-//                return true;
-//            }
-            if (currentItem == 1 && (lastItem == 1 || nextItem ==1)) {
-                isNeed = true;
-            }else if(currentItem == 1 && lastItem != 1 && nextItem != 1){
-                if(i>6 && i%7==0){
-                    isNeed = true;
-                    return true;
-                }else {
-                    isNeed = false;
-                    return false;
+            if (currentItem == 1 && (lastItem == 1 || nextItem == 1)) {
+               // isNeed = true;
+                list.add("1");
+            } else if (currentItem == 1 && lastItem != 1 && nextItem != 1) {
+                if (i > 6 && i % 7 == 0) {
+                  //  isNeed = true;
+                    list.add("1");
+                    //return true;
+                } else {
+                 //   isNeed = false;
+                    list.add("0");
+                    //return false;
                 }
             }
             lastItem = currentItem;
         }
-        if (isNeed) {
+        if (!list.contains("0")) {
             return true;
-        }else {
+        } else {
             return false;
         }
     }

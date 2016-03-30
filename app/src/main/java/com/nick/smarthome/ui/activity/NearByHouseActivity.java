@@ -292,11 +292,11 @@ public class NearByHouseActivity extends BaseSwipeBackActivity implements SwipeR
 
         mListData.clear();
 
-        mAdapter.notifyDataSetChanged();
+   //     mAdapter.notifyDataSetChanged();
 
         mCurrentPage = 1;
-        distanceSort = "";
-        priceSort = "0";
+//        distanceSort = "";
+//        priceSort = "0";
         getData(mCurrentPage, distanceSort, priceSort);
     }
 
